@@ -73,7 +73,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'james@email.com',
@@ -84,18 +84,18 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'dalton@email.com',
       password: '123',
       firstName: 'Dalton',
-      lastname: 'Spinas',
+      lastName: 'Spinas',
       imageUrl: 'https://ca.slack-edge.com/T024FPYBQ-UDR962FPY-g697ce1271a8-72',
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'frank@email.com',
@@ -106,7 +106,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'omri@email.com',
@@ -117,7 +117,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'cody@email.com',
@@ -128,7 +128,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     })
   ])
 

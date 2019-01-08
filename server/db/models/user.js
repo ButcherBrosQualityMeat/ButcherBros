@@ -45,10 +45,7 @@ const User = db.define('user', {
     allowNull: false
   },
   creditCardInfo: {
-    type: INTEGER,
-    validate: {
-      isCreditCard: true
-    }
+    type: STRING
   }
 })
 
