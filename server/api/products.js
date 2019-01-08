@@ -31,7 +31,7 @@ router.get('/beef', async (req, res, next) => {
   try {
     const beefProducts = await Product.findAll({
       where: {
-        categoryId: '1'
+        categoryId: 1
       }
     })
     res.json(beefProducts)
