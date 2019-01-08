@@ -17,7 +17,7 @@ router.get('/pork', async (req, res, next) => {
   try {
     const porkProducts = await Product.findAll({
       where: {
-        category: 'Pork'
+        categoryId: '2'
       }
     })
     res.json(porkProducts)
@@ -31,7 +31,7 @@ router.get('/beef', async (req, res, next) => {
   try {
     const beefProducts = await Product.findAll({
       where: {
-        category: 'Beef'
+        categoryId: '1'
       }
     })
     res.json(beefProducts)
@@ -45,7 +45,7 @@ router.get('/chicken', async (req, res, next) => {
   try {
     const chickenProducts = await Product.findAll({
       where: {
-        category: 'Chicken'
+        categoryId: '3'
       }
     })
     res.json(chickenProducts)
