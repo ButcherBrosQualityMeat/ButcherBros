@@ -58,7 +58,7 @@ router.get('/chicken', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   const productId = req.params.id
   try {
-    const singleProduct = await Product.findByPk(productId)
+    const singleProduct = await Product.findById(productId)
     res.json(singleProduct)
   } catch (err) {
     next(err)
