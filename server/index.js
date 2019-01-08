@@ -41,6 +41,9 @@ passport.deserializeUser(async (id, done) => {
 })
 
 const createApp = () => {
+  //formats json responses for legibility
+  app.set('json spaces', 2)
+
   // logging middleware
   app.use(morgan('dev'))
 
