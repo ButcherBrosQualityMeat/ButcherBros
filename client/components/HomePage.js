@@ -21,4 +21,4 @@ const HomePage = props => {
   )
 }
 
-export default connect(mapState, mapDispatch)(HomePage)
+export default HomePage
