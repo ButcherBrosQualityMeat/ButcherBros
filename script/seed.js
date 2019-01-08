@@ -1,16 +1,40 @@
 'use strict'
 
 const db = require('../server/db')
-const {User, Product} = require('../server/db/models')
+const {User, Product, Category} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
+  const categories = await Promise.all([
+    Category.create({
+      name: 'Beef',
+      imageUrl:
+        'https://images.pexels.com/photos/231062/pexels-photo-231062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      description:
+        'Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times. Beef is a source of high-quality protein and nutrients.'
+    }),
+    Category.create({
+      name: 'Pork',
+      imageUrl:
+        'https://images.pexels.com/photos/110820/pexels-photo-110820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      description:
+        'Pork is the culinary name for meat from a domestic pig. It is the most commonly consumed meat worldwide, with evidence of pig husbandry dating back to 5000 BC. Pork is eaten both freshly cooked and preserved.'
+    }),
+    Category.create({
+      name: 'Chicken',
+      imageUrl:
+        'https://images.pexels.com/photos/195226/pexels-photo-195226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      description:
+        'The chicken is a type of domesticated fowl, a subspecies of the red junglefowl. It is one of the most common and widespread domestic animals, with a total population of more than 19 billion as of 2011.'
+    })
+  ])
+
   const products = await Promise.all([
     Product.create({
       name: 'Beef Shank',
-      category: 'Beef',
+      categoryId: 1,
       price: '12.00',
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
@@ -19,7 +43,7 @@ async function seed() {
     }),
     Product.create({
       name: 'Brisket',
-      category: 'Beef',
+      categoryId: 1,
       price: '20.00',
       imageUrl:
         'https://assets.bonappetit.com/photos/5a05d8252fff8c4e1363fe4f/16:9/w_1200,c_limit/mamalehs-brisket.jpg',
@@ -28,7 +52,7 @@ async function seed() {
     }),
     Product.create({
       name: 'Pork Loin',
-      category: 'Pork',
+      categoryId: 2,
       price: '6.00',
       imageUrl:
         'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/201307-xl-spice-roasted-pork-tenderloin.jpg?itok=VoUYF6Eq',
@@ -37,7 +61,7 @@ async function seed() {
     }),
     Product.create({
       name: 'Pork Belly',
-      category: 'Pork',
+      categoryId: 2,
       price: '30.00',
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
@@ -46,7 +70,7 @@ async function seed() {
     }),
     Product.create({
       name: 'Whole Chicken',
-      category: 'Chicken',
+      categoryId: 3,
       price: '2.00',
       imageUrl: 'http://www.kochfoodsinc.com/images/WOG_DescriptionImage.jpg',
       description:
@@ -54,7 +78,7 @@ async function seed() {
     }),
     Product.create({
       name: 'Chicken wing ',
-      category: 'Chicken',
+      categoryId: 3,
       price: '112.00',
       imageUrl:
         'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4c41b09cf41644a7b7ca1780edbeb960/BFV8354_Honey_BBQ_Chicken_Wings-FB1080.jpg',
@@ -134,6 +158,7 @@ async function seed() {
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${products.length} products`)
+  console.log(`seeded ${categories.length} categories`)
   console.log(`seeded successfully`)
 }
 
