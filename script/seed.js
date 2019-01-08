@@ -11,7 +11,7 @@ async function seed() {
     Product.create({
       name: 'Beef Shank',
       category: 'Beef',
-      price: '$12.00',
+      price: '12.00',
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
       description:
@@ -20,7 +20,7 @@ async function seed() {
     Product.create({
       name: 'Brisket',
       category: 'Beef',
-      price: '$20.00',
+      price: '20.00',
       imageUrl:
         'https://assets.bonappetit.com/photos/5a05d8252fff8c4e1363fe4f/16:9/w_1200,c_limit/mamalehs-brisket.jpg',
       description:
@@ -29,7 +29,7 @@ async function seed() {
     Product.create({
       name: 'Pork Loin',
       category: 'Pork',
-      price: '$6.00',
+      price: '6.00',
       imageUrl:
         'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/201307-xl-spice-roasted-pork-tenderloin.jpg?itok=VoUYF6Eq',
       description:
@@ -38,7 +38,7 @@ async function seed() {
     Product.create({
       name: 'Pork Belly',
       category: 'Pork',
-      price: '$30.00',
+      price: '30.00',
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
       description:
@@ -47,7 +47,7 @@ async function seed() {
     Product.create({
       name: 'Whole Chicken',
       category: 'Chicken',
-      price: '$2.00',
+      price: '2.00',
       imageUrl: 'http://www.kochfoodsinc.com/images/WOG_DescriptionImage.jpg',
       description:
         'Whole Chicken: The chicken with all parts intact, generally including the giblets stuffed in the cavity. Consists of white and dark meat. ... The chicken is split in half lengthwise through the breast and back, leaving fairly equal halves consisting of the same parts. Both halves consist of white and dark meat.'
@@ -55,7 +55,7 @@ async function seed() {
     Product.create({
       name: 'Chicken wing ',
       category: 'Chicken',
-      price: '$112.00',
+      price: '112.00',
       imageUrl:
         'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4c41b09cf41644a7b7ca1780edbeb960/BFV8354_Honey_BBQ_Chicken_Wings-FB1080.jpg',
       description:
@@ -73,7 +73,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'james@email.com',
@@ -84,18 +84,18 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'dalton@email.com',
       password: '123',
       firstName: 'Dalton',
-      lastname: 'Spinas',
+      lastName: 'Spinas',
       imageUrl: 'https://ca.slack-edge.com/T024FPYBQ-UDR962FPY-g697ce1271a8-72',
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'frank@email.com',
@@ -106,7 +106,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'omri@email.com',
@@ -117,7 +117,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     }),
     User.create({
       email: 'cody@email.com',
@@ -128,7 +128,7 @@ async function seed() {
       googleId: '54321',
       mailingAddress: '420 High Street',
       billingAddress: '101 Main Street',
-      creditCardInfo: '345h67j8k9l'
+      creditCardInfo: '1234 1234 1234 1234'
     })
   ])
 
