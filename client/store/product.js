@@ -54,6 +54,7 @@ export const fetchAllProducts = () => {
       const products = response.data
       dispatch(getAllProducts(products))
     } catch (err) {
+      // OB/JL: good that you're considering errors, but go further—console log puts the error into a developer's view, consider error reporting to the end user somehow. For example, you might try a "toast" or "dialog" popup (e.g. react toastr: https://tomchentw.github.io/react-toastr)
       console.log(err)
     }
   }
@@ -66,6 +67,13 @@ export const fetchAllProducts = () => {
 /**
  * REDUCER
  */
+// OB/JL: consider flattening state by separating this reducer into two separate reducers (one for all products, one for selected product)
+// OB/JL: selected product state may be redundant, you could use a selector instead, so in `mapStateToProps` you might have something like:
+/*
+// ...
+state.products.find(product => product.id === ownProps.match.params.productId)
+// ...
+*/
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_ALL_PRODUCTS:

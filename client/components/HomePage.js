@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 const HomePage = props => {
+  // OB/JL: undead code!
   //const { products } = props;
   return (
     <div>

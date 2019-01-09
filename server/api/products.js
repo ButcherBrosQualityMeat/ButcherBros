@@ -12,6 +12,8 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// OB/JL: squish all the routes below, probably incorporate them into the GET all above, using the query string, instead of GET /products/pork, do GET /products?categoryId=2, access {categoryId: 2} via `req.query`
+
 //returns only pork products
 router.get('/pork', async (req, res, next) => {
   try {
