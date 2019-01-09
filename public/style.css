@@ -19,3 +19,42 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.div-nav {
+  height: 60px;
+}
+
+/* this keeps the footer at the bottom of the page */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/*HERO CSS */
+.bgimage {
+  width: 100%;
+  height: 350px;
+  background: url('https://images.pexels.com/photos/1375902/pexels-photo-1375902.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bgimage {
+  color: white;
+  text-shadow: 2px 2px #333;
+}
+.hero-header {
+  margin-top: 60px;
+  font-size: 2em;
+}
+
+.hero-sub-header {
+  color: rgb(245, 241, 241);
+  font-size: 1.5em;
+}
+
+.hero-button {
+  margin-top: 30px;
+}
