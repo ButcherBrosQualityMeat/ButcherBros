@@ -38,11 +38,6 @@ const Navbar = ({handleClick, isLoggedIn}) => (
                   Products
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About Us
-                </a>
-              </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"

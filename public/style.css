@@ -24,6 +24,10 @@ form div {
   height: 60px;
 }
 
+.nav {
+  position: fixed;
+}
+
 /* this keeps the footer at the bottom of the page */
 .footer {
   position: fixed;
