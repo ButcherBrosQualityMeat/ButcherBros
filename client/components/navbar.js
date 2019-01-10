@@ -44,10 +44,33 @@ const Navbar = ({handleClick, isLoggedIn}) => (
                 About
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Products
               </a>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a className="dropdown-item" href="/products">
+                  All
+                </a>
+                <div className="dropdown-divider" />
+                <a className="dropdown-item" href="/categories/1">
+                  Beef
+                </a>
+                <a className="dropdown-item" href="/categories/2">
+                  Pork
+                </a>
+                <a className="dropdown-item" href="/categories/3">
+                  Chicken
+                </a>
+              </div>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/cart">
@@ -97,10 +120,33 @@ const Navbar = ({handleClick, isLoggedIn}) => (
                 About
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Products
               </a>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a className="dropdown-item" href="/products">
+                  All
+                </a>
+                <div className="dropdown-divider" />
+                <a className="dropdown-item" href="/categories/1">
+                  Beef
+                </a>
+                <a className="dropdown-item" href="/categories/2">
+                  Pork
+                </a>
+                <a className="dropdown-item" href="/categories/3">
+                  Chicken
+                </a>
+              </div>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/signup">
