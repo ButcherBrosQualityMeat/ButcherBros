@@ -28,7 +28,7 @@ body {
 
 .business-header {
   height: 90vh;
-  min-height: 310px;
+  min-height: 300px;
   background: url('https://images.pexels.com/photos/1375901/pexels-photo-1375901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
     center center no-repeat fixed;
   /* replace scroll with "fixed" above will cause image to be fixed */
