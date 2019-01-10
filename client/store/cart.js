@@ -50,9 +50,15 @@ export default function(cart = dummyCart, action) {
           ...cart,
           contents: cart.contents.map(e => {
             if (e.productId === action.item.productId) {
-              return e.quantity + action.item.quantity
+              return {
+                quantity: e.quantity + action.item.quantity,
+                productId: e.productId
+              }
             } else {
-              return e.quantity
+              return {
+                productId: e.productId,
+                quantity: e.quantity
+              }
             }
           })
         }

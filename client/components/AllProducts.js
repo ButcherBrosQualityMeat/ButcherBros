@@ -13,7 +13,7 @@ class AllProducts extends React.Component {
     evt.preventDefault()
     const productId = evt.target.id
     console.log(productId)
-    this.props.addItemToCart({productId, quantity: 1})
+    this.props.addItemToCart({productId: parseInt(productId, 10), quantity: 1})
   }
   render() {
     if (this.props.info.length === 0) {
