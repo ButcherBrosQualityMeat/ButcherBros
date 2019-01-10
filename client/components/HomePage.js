@@ -73,10 +73,7 @@ const HomePage = props => {
               />
               <div className="card-body">
                 <h4 className="card-title">Beef Products</h4>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sapiente esse necessitatibus neque sequi doloribus.
-                </p>
+                <p className="card-text">{categories[0].description}</p>
               </div>
               <div className="card-footer">
                 <a href="/products/1" className="btn btn-dark">
@@ -94,11 +91,7 @@ const HomePage = props => {
               />
               <div className="card-body">
                 <h4 className="card-title">Pork Products</h4>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sapiente esse necessitatibus neque sequi doloribus totam ut
-                  praesentium aut.
-                </p>
+                <p className="card-text">{categories[1].description}</p>
               </div>
               <div className="card-footer">
                 <a href="/products/2" className="btn btn-dark">
@@ -116,10 +109,7 @@ const HomePage = props => {
               />
               <div className="card-body">
                 <h4 className="card-title">Poultry Products</h4>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sapiente esse necessitatibus neque.
-                </p>
+                <p className="card-text">{categories[2].description}</p>
               </div>
               <div className="card-footer">
                 <a href="/products/3" className="btn btn-dark">
