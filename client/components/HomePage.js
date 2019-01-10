@@ -3,8 +3,9 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 const HomePage = props => {
-  //const { products } = props;
-  return (
+  const {categories, products} = props
+
+  return categories.length ? (
     <div>
       <section className="bgimage">
         <div className="container-fluid">
@@ -62,23 +63,21 @@ const HomePage = props => {
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img
-                  height="100px"
-                  width="400px"
-                  src="https://images.pexels.com/photos/144432/pexels-photo-144432.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src={categories[0].imageUrl}
                   className="d-block w-100"
                   alt="..."
                 />
               </div>
               <div className="carousel-item">
                 <img
-                  src="https://images.pexels.com/photos/1154643/pexels-photo-1154643.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src={categories[1].imageUrl}
                   className="d-block w-100"
                   alt="..."
                 />
               </div>
               <div className="carousel-item">
                 <img
-                  src="https://images.pexels.com/photos/680302/pexels-photo-680302.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src={categories[2].imageUrl}
                   className="d-block w-100"
                   alt="..."
                 />
@@ -106,7 +105,16 @@ const HomePage = props => {
         </div>
       </div>
     </div>
+  ) : (
+    <div>Loading...</div>
   )
 }
 
-export default HomePage
+const mapStateToProps = state => {
+  return {
+    categories: state.product.allCategories,
+    products: state.product.allProducts
+  }
+}
+
+export default connect(mapStateToProps)(HomePage)
