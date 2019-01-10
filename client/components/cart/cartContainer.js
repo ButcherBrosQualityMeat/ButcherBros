@@ -4,7 +4,8 @@ import CartPresentational from './cartPresentational'
 
 const mapState = state => {
   return {
-    cart: state.cart
+    cart: state.cart,
+    products: state.product.allProducts
   }
 }
 

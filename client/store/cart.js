@@ -17,6 +17,9 @@ const dummyCart = {
 const ADD_TO_CART = 'ADD_TO_CART'
 
 // Action Creators
+// item is an object with two properties:
+// productId: id of the product
+// quantity: number of the product to add to the cart
 const addToCart = item => ({
   type: ADD_TO_CART,
   item
@@ -37,9 +40,28 @@ export const addItemToCart = item => {
 export default function(cart = dummyCart, action) {
   switch (action.type) {
     case ADD_TO_CART:
-      return {
-        ...cart,
-        contents: cart.contents.concat(action.item)
+      // check if product already exists in cart
+      const product = cart.contents.find(
+        e => e.productId === action.item.productId
+      )
+      // if product already in cart, add quantity to existing product by returning new array
+      if (product) {
+        return {
+          ...cart,
+          contents: cart.contents.map(e => {
+            if (e.productId === action.item.productId) {
+              return e.quantity + action.item.quantity
+            } else {
+              return e.quantity
+            }
+          })
+        }
+      } else {
+        // otherwise, append item to the cart
+        return {
+          ...cart,
+          contents: cart.contents.concat(action.item)
+        }
       }
     default:
       return cart
