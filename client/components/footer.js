@@ -2,7 +2,13 @@ import React from 'react'
 
 const footer = () => (
   <div className="footer">
-    <p>(Here is Some Placeholder Footer Text)</p>
+    <footer className="py-5 bg-dark">
+      <div className="container">
+        <p className="m-0 text-center text-white">
+          Copyright &copy; Your Website 2018
+        </p>
+      </div>
+    </footer>
   </div>
 )
 
