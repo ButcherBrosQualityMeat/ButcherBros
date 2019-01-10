@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import addItemToCart from '../store/cart'
+import {addItemToCart} from '../store/cart'
 
 class SinglePageView extends React.Component {
   constructor() {
@@ -11,14 +11,15 @@ class SinglePageView extends React.Component {
 
   handleClick(evt) {
     evt.preventDefault()
-    const productId = Number(evt.target.id)
-    console.log(productId, 'ssdfgsdfgsdfgsdf')
-    this.props.addItemToCart({productId, quantity: 1})
+    const productId = evt.target.id
+    const objectVariable = {productId: parseInt(productId, 10), quantity: 1}
+    this.props.addItemToCart(objectVariable)
   }
 
   render() {
     const {products} = this.props
     const productIdNum = Number(this.props.match.params.id - 1)
+    console.log(productIdNum, 'inside of render')
     return products.length ? (
       <div className="container-fluid">
         <div className="col-sm-4 col-md-4.5 col-lg-5 my-4">
@@ -49,12 +50,11 @@ class SinglePageView extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(state, '>>>>>>>>')
-  return {
-    products: state.product.allProducts
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  //console.log(state, '>>>>>>>>')
+  products: state.product.allProducts
+  //info: state.product
+})
 const mapDispatchToProps = dispatch => ({
   addItemToCart: productObj => dispatch(addItemToCart(productObj))
 })

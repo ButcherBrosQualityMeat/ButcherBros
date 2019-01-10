@@ -22,6 +22,7 @@ export const addItemToCart = item => {
 // Cart is an array of objects representing items.
 // Each object has two properties: quantity and productId
 export default function(cart = emptyCart, action) {
+  console.log(action)
   switch (action.type) {
     case ADD_TO_CART:
       return cart.concat(action.item)

@@ -6,6 +6,7 @@ import {
   Login,
   Signup,
   UserHome,
+  About,
   HomePage,
   SinglePageView,
   AllProducts,
@@ -23,7 +24,6 @@ class Routes extends Component {
     this.props.loadInitialData()
     this.props.fetchAllProducts()
     this.props.fetchAllCategories()
-    console.log('hello state')
   }
 
   render() {
@@ -35,6 +35,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/homepage" component={HomePage} />
+        <Route path="/About" component={About} />
         <Route path="/cart" component={Cart} />
         <Route path="/products/:id" component={SinglePageView} />
         <Route path="/products" component={AllProducts} />
