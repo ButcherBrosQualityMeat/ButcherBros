@@ -44,6 +44,7 @@ const User = db.define('user', {
     type: TEXT,
     allowNull: false
   },
+  // OB/JL: (probably) don't store this
   creditCardInfo: {
     type: STRING
   }
