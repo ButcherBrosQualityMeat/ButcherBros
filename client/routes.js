@@ -9,6 +9,7 @@ import {
   HomePage,
   SinglePageView,
   AllProducts,
+  SingleCategory,
   Cart
 } from './components'
 import {me} from './store'
@@ -37,6 +38,7 @@ class Routes extends Component {
         <Route path="/cart" component={Cart} />
         <Route path="/products/:id" component={SinglePageView} />
         <Route path="/products" component={AllProducts} />
+        <Route path="/categories/:id" component={SingleCategory} />
 
         {isLoggedIn && (
           <Switch>
