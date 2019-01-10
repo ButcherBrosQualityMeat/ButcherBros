@@ -36,6 +36,7 @@ export const addItemToCart = item => {
 // Cart Reducer
 // Cart.contents: an array of objects representing items.
 // Each object has two properties: quantity and productId
+
 // Cart.orderId: if user is logged in, orderId of order stored in database
 export default function(cart = dummyCart, action) {
   switch (action.type) {
