@@ -34,7 +34,7 @@ body {
   height: 90vh;
   min-height: 300px;
   background: url('https://images.pexels.com/photos/1375901/pexels-photo-1375901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-    center center no-repeat fixed;
+    center center no-repeat scroll;
   /* replace scroll with "fixed" above will cause image to be fixed */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -46,11 +46,14 @@ body {
   height: 100%;
 }
 
+#qualityText {
+  font-family: 'Knewave', cursive;
+}
+
 .userInfoForm {
   margin-top: 26%;
   margin-bottom: 15%;
   color: rgb(10, 8, 8);
-
   border-radius: 20px;
 }
 
@@ -59,7 +62,7 @@ body {
   font-family: 'Knewave', cursive;
   font-size: 3.2em;
   text-align: center;
-  position: fixed;
+  position: sticky;
 }
 
 #userInfoForm {
