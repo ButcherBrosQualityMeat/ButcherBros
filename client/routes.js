@@ -17,6 +17,7 @@ import {
 } from './components'
 import {me} from './store'
 import {fetchAllProducts, fetchAllCategories} from './store/product'
+import {fetchCart} from './store/cart'
 
 /**
  * COMPONENT
@@ -26,6 +27,7 @@ class Routes extends Component {
     this.props.loadInitialData()
     this.props.fetchAllProducts()
     this.props.fetchAllCategories()
+    this.props.fetchCart()
   }
 
   render() {
@@ -79,6 +81,9 @@ const mapDispatch = dispatch => {
     },
     fetchAllCategories() {
       dispatch(fetchAllCategories())
+    },
+    fetchCart() {
+      dispatch(fetchCart())
     }
   }
 }

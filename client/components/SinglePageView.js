@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addItemToCart} from '../store/cart'
+import {addItemToCart, updateSessionCart} from '../store/cart'
 
 class SinglePageView extends React.Component {
   constructor() {
