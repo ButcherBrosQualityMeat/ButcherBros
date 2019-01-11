@@ -17,6 +17,15 @@ module.exports = app
 if (process.env.NODE_ENV === 'test') {
   after('close the session store', () => sessionStore.stopExpiringSessions())
 }
+//STRIPE STUFF
+//const keySecret = process.env.SECRET_KEY;
+//const stripe = require("stripe")(keySecret);
+
+const keySecret = process.env.sk_test_Slu9Ke92GB9KPYhlsZIwySgU
+const stripe = require('stripe')(keySecret)
+app.set('view engine', 'pug')
+app.use(require('body-parser').urlencoded({extended: false}))
+//secret key is: sk_test_Slu9Ke92GB9KPYhlsZIwySgU
 
 /**
  * In your development environment, you can keep all of your
