@@ -3,14 +3,15 @@ const {Order} = require('../db/models')
 
 module.exports = router
 
-// GET
-
 // POST
-router.post('/', async (req, res, next) => {})
-
-// PUT
-
-// DELETE
+router.post('/', async (req, res, next) => {
+  try {
+    await Order.create(req.body)
+    res.status(201).send('Order Created')
+  } catch (error) {
+    next(error)
+  }
+})
 
 router.use((req, res, next) => {
   const error = new Error('Not Found')
