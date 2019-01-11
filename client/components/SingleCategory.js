@@ -18,7 +18,7 @@ class SingleCategory extends React.Component {
                   <h1>{category.name}</h1>
                   <img src={category.imageUrl} width="600px" heigth="600px" />
                   <p>{category.description}</p>
-                  <h1>View our selection of chicken products:</h1>
+                  <h1>View our selection of {category.name} products:</h1>
                   {category.products.map(product => {
                     return (
                       <div key={product.id}>

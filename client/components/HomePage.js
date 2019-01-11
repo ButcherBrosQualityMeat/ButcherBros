@@ -40,9 +40,9 @@ const HomePage = props => {
             </p>
 
             <p>
-              <a className="btn btn-dark btn-lg" href="/products">
+              <Link className="btn btn-dark btn-lg" to="/products">
                 View Selection &raquo;
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-sm-4">
@@ -58,7 +58,7 @@ const HomePage = props => {
               (123) 456-7890
               <br />
               <abbr title="Email">E:</abbr>
-              <a href="mailto:#">name@example.com</a>
+              <Link to="mailto:#">name@example.com</Link>
             </address>
           </div>
         </div>
@@ -76,9 +76,9 @@ const HomePage = props => {
                 <p className="card-text">{categories[0].description}</p>
               </div>
               <div className="card-footer">
-                <a href="/products/1" className="btn btn-dark">
+                <Link to="/categories/1" className="btn btn-dark">
                   Beef Products
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -94,9 +94,9 @@ const HomePage = props => {
                 <p className="card-text">{categories[1].description}</p>
               </div>
               <div className="card-footer">
-                <a href="/products/2" className="btn btn-dark">
+                <Link to="/categories/2" className="btn btn-dark">
                   Pork Products
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -112,9 +112,9 @@ const HomePage = props => {
                 <p className="card-text">{categories[2].description}</p>
               </div>
               <div className="card-footer">
-                <a href="/products/3" className="btn btn-dark">
+                <Link to="/categories/3" className="btn btn-dark">
                   Poultry Products
-                </a>
+                </Link>
               </div>
             </div>
           </div>
