@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addItemToCart, updateSessionCart} from '../store/cart'
 
-class AllProducts extends React.Component {
+export class AllProducts extends React.Component {
   constructor() {
     super()
     this.handleClick = this.handleClick.bind(this)
@@ -24,7 +24,10 @@ class AllProducts extends React.Component {
         <div className="row d-flex justify-content-start">
           {this.props.info.allProducts.map(product => {
             return (
-              <div className="h-70 col-sm-4 col-md-4 d-flex my-3">
+              <div
+                className="h-70 col-sm-4 col-md-4 d-flex my-3"
+                key={product.id}
+              >
                 <div className="card" width="18rem">
                   <Link to={`/products/${product.id}`}>
                     <img
