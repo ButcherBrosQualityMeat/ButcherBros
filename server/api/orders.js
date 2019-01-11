@@ -6,8 +6,8 @@ module.exports = router
 // POST
 router.post('/', async (req, res, next) => {
   try {
-    await Order.create(req.body)
-    res.status(201).send('Order Created')
+    const order = await Order.create(req.body)
+    res.status(201).json(order)
   } catch (error) {
     next(error)
   }
