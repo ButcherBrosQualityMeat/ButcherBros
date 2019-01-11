@@ -20,26 +20,38 @@ class AllProducts extends React.Component {
       return <div>Please standy, loading products...</div>
     }
     return (
-      <div>
-        <h1>List of Products:</h1>
-        <div className="card-group">
-          {this.props.info.allProducts.map(product => (
-            <div key={product.id} className="card">
-              <Link to={`/products/${product.id}`}>
-                <img src={product.imageUrl} className="card-img-top" />
-              </Link>
-              <h5 className="card-title">{product.name}</h5>
-              <p className="card-text">{product.description}</p>
-              <a
-                href="#"
-                className="btn btn-primary"
-                id={product.id}
-                onClick={this.handleClick}
-              >
-                Add to Cart
-              </a>
-            </div>
-          ))}
+      <div className="container-fluid col-sm-4 col-md-9">
+        <h3 className="mt-5">All Products</h3>
+        <div className="row d-flex justify-content-start">
+          {this.props.info.allProducts.map(product => {
+            return (
+              <div className="h-70 col-sm-4 col-md-4 d-flex my-3">
+                <div className="card" width="18rem">
+                  <Link to={`/products/${product.id}`}>
+                    <img
+                      width="100%"
+                      height="150vw"
+                      src={product.imageUrl}
+                      className="card-img-top"
+                      alt="..."
+                    />
+                  </Link>
+                  <div className="card-body">
+                    <h5 className="card-title">{product.name}</h5>
+                    <p className="card-text">${product.price}</p>
+                    <a
+                      id={product.id}
+                      onClick={this.handleClick}
+                      href="#"
+                      className="btn btn-primary"
+                    >
+                      Add to Cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     )

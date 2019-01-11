@@ -38,8 +38,7 @@ async function seed() {
       price: '12.00',
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
-      description:
-        'The beef shank is the shank portion of a steer or heifer. In Britain the corresponding cuts of beef are the shin, and the leg. Due to the constant use of this muscle by the animal it tends to be tough, dry, and sinewy, so is best when cooked for a long time in moist heat.'
+      description: 'The beef shank is the shank portion of a steer or heifer.'
     }),
     Product.create({
       name: 'Brisket',
@@ -48,7 +47,7 @@ async function seed() {
       imageUrl:
         'https://assets.bonappetit.com/photos/5a05d8252fff8c4e1363fe4f/16:9/w_1200,c_limit/mamalehs-brisket.jpg',
       description:
-        'Brisket is a cut of meat from the breast or lower chest of beef or veal. The beef brisket is one of the nine beef primal cuts, though the precise definition of the cut differs internationally. The brisket muscles include the superficial and deep pectorals.'
+        'Brisket is a cut of meat from the breast or lower chest of beef or veal.'
     }),
     Product.create({
       name: 'Pork Loin',
@@ -56,8 +55,7 @@ async function seed() {
       price: '6.00',
       imageUrl:
         'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/201307-xl-spice-roasted-pork-tenderloin.jpg?itok=VoUYF6Eq',
-      description:
-        'Pork loin is a cut of meat from a pig, created from the tissue along the dorsal side of the rib cage.'
+      description: 'Pork loin is a cut of meat from a pig.'
     }),
     Product.create({
       name: 'Pork Belly',
@@ -66,7 +64,7 @@ async function seed() {
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
       description:
-        'Pork belly is a boneless cut of fatty meat from the belly of a pig. This dish is considered a delicacy in many parts of the world.'
+        'Pork belly is a boneless cut of fatty meat from the belly of a pig.'
     }),
     Product.create({
       name: 'Whole Chicken',
@@ -74,7 +72,7 @@ async function seed() {
       price: '2.00',
       imageUrl: 'http://www.kochfoodsinc.com/images/WOG_DescriptionImage.jpg',
       description:
-        'Whole Chicken: The chicken with all parts intact, generally including the giblets stuffed in the cavity. Consists of white and dark meat. ... The chicken is split in half lengthwise through the breast and back, leaving fairly equal halves consisting of the same parts. Both halves consist of white and dark meat.'
+        'Whole Chicken: The chicken with all parts intact, generally including the giblets.'
     }),
     Product.create({
       name: 'Chicken wing ',
@@ -83,7 +81,7 @@ async function seed() {
       imageUrl:
         'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4c41b09cf41644a7b7ca1780edbeb960/BFV8354_Honey_BBQ_Chicken_Wings-FB1080.jpg',
       description:
-        'Chicken wing section (flat or drumette) that is generally deep-fried then coated or dipped in a sauce consisting of a vinegar-based cayenne pepper hot sauce and melted butter prior to serving.'
+        'Chicken wing section (flat or drumette) that is generally deep-fried.'
     })
   ])
 
