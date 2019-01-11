@@ -9,11 +9,13 @@ const initialState = {
 /**
  * ACTION TYPES
  */
-const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS'
+
+export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS'
+
 const GET_ALL_CATEGORIES = 'GET_ALL_CATEGORIES'
 
 // Action Creators
-const getAllProducts = products => {
+export const getAllProducts = products => {
   return {
     type: GET_ALL_PRODUCTS,
     products
