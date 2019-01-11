@@ -1,13 +1,9 @@
-### Assignee Tasks
+### Header Format
 
-* [ ] added unit tests (or none needed)
-* [ ] written relevant docs (or none needed)
-* [ ] referenced any relevant issues (or none exist)
+To standardize pull request appearances, begin head with one of the following subjects:
+
+Chore / Docs / Feat / Fix / Refactor / Style / Test
 
 ### Guidelines
 
-Please add a description of this Pull Request's motivation, scope, outstanding issues or potential alternatives, reasoning behind the current solution, and any other relevant information for posterity.
-
----
-
-_Your PR Notes Here_
+Describe the updates this code makes to the current master branch
