@@ -1,8 +1,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {addItemToCart} from '../store/cart'
 
 class SingleCategory extends React.Component {
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(evt) {
+    evt.preventDefault()
+    const productId = evt.target.id
+    console.log(productId)
+    this.props.addItemToCart({productId: parseInt(productId, 10), quantity: 1})
+  }
+
   render() {
     const categoryId = Number(this.props.match.params.id)
     if (this.props.info.length === 0) {
@@ -32,7 +45,14 @@ class SingleCategory extends React.Component {
                         </Link>
                         <div>
                           <p>{product.description}</p>
-                          <button>Add to Cart</button>
+                          <a
+                            href="#"
+                            className="btn btn-primary"
+                            id={product.id}
+                            onClick={this.handleClick}
+                          >
+                            Add to Cart
+                          </a>
                         </div>
                       </div>
                     )
@@ -51,4 +71,8 @@ const mapStateToProps = state => ({
   info: state.product
 })
 
-export default connect(mapStateToProps)(SingleCategory)
+const mapDispatchToProps = dispatch => ({
+  addItemToCart: productObj => dispatch(addItemToCart(productObj))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleCategory)
