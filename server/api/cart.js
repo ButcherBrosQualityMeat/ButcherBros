@@ -7,7 +7,6 @@ router.get('/', (req, res, next) => {
   if (!req.session.cart.contents) {
     req.session.cart = {contents: [], orderId: null}
   }
-  console.log('req.session.cart: ', req.session.cart)
   res.json(req.session.cart)
 })
 
