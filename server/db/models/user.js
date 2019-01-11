@@ -43,9 +43,6 @@ const User = db.define('user', {
   billingAddress: {
     type: TEXT,
     allowNull: false
-  },
-  creditCardInfo: {
-    type: STRING
   }
 })
 

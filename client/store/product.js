@@ -9,7 +9,9 @@ const initialState = {
 /**
  * ACTION TYPES
  */
+
 export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS'
+
 const GET_ALL_CATEGORIES = 'GET_ALL_CATEGORIES'
 
 // Action Creators
