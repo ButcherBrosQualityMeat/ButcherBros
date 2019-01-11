@@ -12,14 +12,23 @@ const CartPresentational = props => {
   return (
     <div className="container">
       <div className="row">
-        {contents.map(item => {
-          const product = products.find(e => e.id === item.productId)
-          return (
-            <p key={product.id}>
-              Quantity: {item.quantity}, Product Name: {product.name}
-            </p>
-          )
-        })}
+        <table className="table">
+          <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+          </tr>
+          {contents.map(item => {
+            const product = products.find(e => e.id === item.productId)
+            return (
+              <tr key={product.id}>
+                <td>{item.quantity}</td>
+                <td>{product.name}</td>
+                <td>{product.price * item.quantity}</td>
+              </tr>
+            )
+          })}
+        </table>
       </div>
     </div>
   )
