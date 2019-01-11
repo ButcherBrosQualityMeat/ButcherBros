@@ -50,6 +50,10 @@ body {
   position: fixed;
 }
 
+#pointer {
+  cursor: pointer;
+}
+
 /* Styles specific to desktop view go in here */
 @media (min-width: 992px) {
   body {

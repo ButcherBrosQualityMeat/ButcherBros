@@ -34,20 +34,21 @@ const Navbar = ({handleClick, isLoggedIn}) => (
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/homepage">
+              <Link className="nav-link" to="/homepage">
                 Home
                 <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <Link className="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
+                id="pointer"
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -57,37 +58,37 @@ const Navbar = ({handleClick, isLoggedIn}) => (
                 Products
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/products">
+                <Link className="dropdown-item" to="/products">
                   All
-                </a>
+                </Link>
                 <div className="dropdown-divider" />
-                <a className="dropdown-item" href="/categories/1">
+                <Link className="dropdown-item" to="/categories/1">
                   Beef
-                </a>
-                <a className="dropdown-item" href="/categories/2">
+                </Link>
+                <Link className="dropdown-item" to="/categories/2">
                   Pork
-                </a>
-                <a className="dropdown-item" href="/categories/3">
+                </Link>
+                <Link className="dropdown-item" to="/categories/3">
                   Chicken
-                </a>
+                </Link>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/cart">
+              <Link className="nav-link" to="/cart">
                 Cart
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/" onClick={handleClick}>
+              <Link className="nav-link" to="/" onClick={handleClick}>
                 Logout
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
     ) : (
       <div className="container">
-        <a className="navbar-brand" href="/homepage">
+        <Link className="navbar-brand" to="/homepage">
           Butcher Bros
           {'    '}
           <img
@@ -95,7 +96,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
             width="40px"
             src="https://images.vexels.com/media/users/3/143248/isolated/preview/9a073ffe6b6bd3508dd0f6e4da820c9a-steak-stroke-icon-by-vexels.png"
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -110,20 +111,21 @@ const Navbar = ({handleClick, isLoggedIn}) => (
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/homepage">
+              <Link className="nav-link" to="/homepage">
                 Home
                 <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <Link className="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
+                id="pointer"
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -133,30 +135,35 @@ const Navbar = ({handleClick, isLoggedIn}) => (
                 Products
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/products">
+                <Link className="dropdown-item" to="/products">
                   All
-                </a>
+                </Link>
                 <div className="dropdown-divider" />
-                <a className="dropdown-item" href="/categories/1">
+                <Link className="dropdown-item" to="/categories/1">
                   Beef
-                </a>
-                <a className="dropdown-item" href="/categories/2">
+                </Link>
+                <Link className="dropdown-item" to="/categories/2">
                   Pork
-                </a>
-                <a className="dropdown-item" href="/categories/3">
+                </Link>
+                <Link className="dropdown-item" to="/categories/3">
                   Chicken
-                </a>
+                </Link>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/signup">
-                Sign Up
-              </a>
+              <Link className="nav-link" to="/cart">
+                Cart
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/login">
+              <Link className="nav-link" to="/signup">
+                Sign Up
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
                 Login
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
