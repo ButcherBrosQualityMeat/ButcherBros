@@ -23,27 +23,31 @@ router.get('/paysuccess', async (req, res, next) => {
   }
 })
 
-router.post('/charge', async (req, res, next) => {
-  try {
-    let amount = 500
+router.post('/charge', (req, res) => {
+  console.log('BUT MYYYYYY BODDDDYYY', req.body)
+  let amount = 500
 
-    await stripe.customers
-      .create({
-        email: req.body.stripeEmail,
-        source: req.body.stripeToken
+  stripe.customers
+    .create({
+      email: req.body.email,
+      card: req.body.id,
+      description: req.body.description,
+      address: req.body.address,
+      phone: req.body.phone
+    })
+    .then(customer =>
+      stripe.charges.create({
+        amount,
+        description: 'Sample Charge',
+        currency: 'usd',
+        customer: customer.id
       })
-      .then(customer =>
-        stripe.charges.create({
-          amount,
-          description: 'Sample Charge',
-          currency: 'usd',
-          customer: customer.id
-        })
-      )
-      .then(charge => res.render('charge.pug'))
-  } catch (err) {
-    next(err)
-  }
+    )
+    .then(charge => res.send(charge))
+    .catch(err => {
+      console.log('Error:', err)
+      res.status(500).send({error: 'Purchase Failed'})
+    })
 })
 
 /*
