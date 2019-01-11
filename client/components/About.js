@@ -7,13 +7,21 @@ const About = () => {
     <div className="card text-center">
       <div className="card-header">Featured</div>
       <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
+        <h5 className="card-title">A Little Bit About Us...</h5>
         <p className="card-text">
-          With supporting text below as a natural lead-in to additional content.
+          We are a full-service, third-generation family owned and operated
+          butcher shop in Sparks, Nevada. We offer quality products at
+          competitive pricing. Fresh cuts of USDA Choice quality beef, marinated
+          tri-tip, stuffed pork chops, country bacon, fresh smoked ham, cream
+          cheese-filled bacon-wrapped jalapeno poppers, korean short ribs and
+          more. We have it all … choice quality, great selection and outstanding
+          customer service! Oh, and one more thing: “If we don’t have it, we can
+          get it!!” We have resources all over the U.S. that will help us find
+          whatever it is you’re looking for!
         </p>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
-        </a>
+        <Link className="btn btn-dark btn-lg" to="/products">
+          View Selection &raquo;
+        </Link>
       </div>
       <div className="card-footer text-muted">2 days ago</div>
     </div>

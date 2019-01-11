@@ -23,48 +23,11 @@ const HomePage = props => {
       </header>
 
       <div className="container">
+        <h2 id="qualityText" className="mt-3 text-center">
+          Quality You Can Taste
+        </h2>
         <div className="row">
-          <div className="col-sm-8">
-            <h2 className="mt-4">What We Do</h2>
-            <p>
-              We are a full-service, third-generation family owned and operated
-              butcher shop in Sparks, Nevada. We offer quality products at
-              competitive pricing. Fresh cuts of USDA Choice quality beef,
-              marinated tri-tip, stuffed pork chops, country bacon, fresh smoked
-              ham, cream cheese-filled bacon-wrapped jalapeno poppers, korean
-              short ribs and more. We have it all … choice quality, great
-              selection and outstanding customer service! Oh, and one more
-              thing: “If we don’t have it, we can get it!!” We have resources
-              all over the U.S. that will help us find whatever it is you’re
-              looking for!
-            </p>
-
-            <p>
-              <Link className="btn btn-dark btn-lg" to="/products">
-                View Selection &raquo;
-              </Link>
-            </p>
-          </div>
-          <div className="col-sm-4">
-            <h2 className="mt-4">Contact Us</h2>
-            <address>
-              <strong>Start Bootstrap</strong>
-              <br />3481 Melrose Place
-              <br />Beverly Hills, CA 90210
-              <br />
-            </address>
-            <address>
-              <abbr title="Phone">P:</abbr>
-              (123) 456-7890
-              <br />
-              <abbr title="Email">E:</abbr>
-              <Link to="mailto:#">name@example.com</Link>
-            </address>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-4 my-4">
+          <div className="mt-3 col-sm-4 my-4">
             <div className="card">
               <img
                 className="card-img-top"
@@ -82,7 +45,7 @@ const HomePage = props => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 my-4">
+          <div className="mt-3 col-sm-4 my-4">
             <div className="card">
               <img
                 className="card-img-top"
@@ -100,7 +63,7 @@ const HomePage = props => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 my-4">
+          <div className="mt-3 col-sm-4 my-4">
             <div className="card">
               <img
                 className="card-img-top"
@@ -117,6 +80,24 @@ const HomePage = props => {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="text-center col-sm-4">
+            <h2 className="mt-4">Contact Us</h2>
+            <address>
+              <strong>Start Bootstrap</strong>
+              <br />3481 Melrose Place
+              <br />Beverly Hills, CA 90210
+              <br />
+            </address>
+            <address>
+              <abbr title="Phone">P:</abbr>
+              (123) 456-7890
+              <br />
+              <abbr title="Email">E:</abbr>
+              <Link to="mailto:#">name@example.com</Link>
+            </address>
           </div>
         </div>
       </div>
