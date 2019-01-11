@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from './index'
 
 // Initial State
 const emptyCart = {
@@ -26,30 +27,21 @@ const retrievedCart = cart => ({
 
 // Thunk Creators
 export const addItemToCart = item => {
-  return dispatch => {
+  return async dispatch => {
     const action = addToCart(item)
     dispatch(action)
+    await axios.put('/api/cart', store.getState().cart)
   }
 }
 
 // initial fetch of cart from server (if it exists)
+// followed by storing retrieved cart in redux store
 export const fetchCart = () => {
   return async dispatch => {
-    const response = await axios.get('api/cart')
+    const response = await axios.get('/api/cart')
     const cart = response.data
     const action = retrievedCart(cart)
     dispatch(action)
-  }
-}
-
-// update cart on server
-export const updateCart = cart => {
-  return async dispatch => {
-    try {
-      await axios.put('api/cart', cart)
-    } catch (error) {
-      console.error('Cart not updated: ', error)
-    }
   }
 }
 

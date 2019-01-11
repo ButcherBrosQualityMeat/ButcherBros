@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {addItemToCart} from '../store/cart'
+import {addItemToCart, updateSessionCart} from '../store/cart'
 
 class AllProducts extends React.Component {
   constructor() {
@@ -12,7 +12,6 @@ class AllProducts extends React.Component {
   handleClick(evt) {
     evt.preventDefault()
     const productId = evt.target.id
-    console.log(productId)
     this.props.addItemToCart({productId: parseInt(productId, 10), quantity: 1})
   }
   render() {
