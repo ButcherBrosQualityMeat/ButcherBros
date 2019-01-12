@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {addItemToCart, updateSessionCart} from '../store/cart'
+import {addItemToCart} from '../store/cart'
 
 class SingleCategory extends React.Component {
   constructor() {
@@ -12,6 +12,7 @@ class SingleCategory extends React.Component {
   handleClick(evt) {
     evt.preventDefault()
     const productId = evt.target.id
+    console.log(productId)
     this.props.addItemToCart({productId: parseInt(productId, 10), quantity: 1})
   }
 
@@ -26,32 +27,45 @@ class SingleCategory extends React.Component {
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
               return (
-                <div key={category.id}>
-                  <h1>{category.name}</h1>
-                  <img src={category.imageUrl} width="600px" heigth="600px" />
+                <div
+                  className="container-fluid col-sm-4 col-md-9"
+                  key={category.id}
+                >
+                  <h3 className="mt-5"> {category.name}</h3>
+                  <img src={category.imageUrl} width="500px" heigth="500px" />
+                  <hr />
                   <p>{category.description}</p>
-                  <h1>View our selection of {category.name} products:</h1>
+                  <h3 className="mt-5">
+                    View our selection of {category.name} products:
+                  </h3>
                   {category.products.map(product => {
                     return (
-                      <div key={product.id}>
-                        <Link to={`/products/${product.id}`}>
-                          <h1>{product.name}</h1>
-                          <img
-                            src={product.imageUrl}
-                            width="300px"
-                            heigth="300px"
-                          />
-                        </Link>
-                        <div>
-                          <p>{product.description}</p>
-                          <a
-                            href="#"
-                            className="btn btn-primary"
-                            id={product.id}
-                            onClick={this.handleClick}
-                          >
-                            Add to Cart
-                          </a>
+                      <div
+                        className="h-70 col-sm-4 col-md-4 d-flex my-3"
+                        key={product.id}
+                      >
+                        <div className="card" width="18rem">
+                          <Link to={`/products/${product.id}`}>
+                            <img
+                              width="100%"
+                              height="150vw"
+                              src={product.imageUrl}
+                              className="card-img-top"
+                              alt="..."
+                            />
+                          </Link>
+                          <div className="card-body">
+                            <h5 className="card-title">{product.name}</h5>
+                            <p className="card-text">${product.price}</p>
+                            <a
+                              id={product.id}
+                              onClick={this.handleClick}
+                              href="#"
+                              className="btn btn-primary"
+                            >
+                              Add to Cart
+                            </a>
+                          </div>
                         </div>
                       </div>
                     )

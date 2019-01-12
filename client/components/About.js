@@ -1,11 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-
+//leaving in header and footer for future use
 const About = () => {
   return (
     <div className="card text-center">
-      <div className="card-header">Featured</div>
+      <div className="card-header" />
       <div className="card-body">
         <h5 className="card-title">A Little Bit About Us...</h5>
         <p className="card-text">
@@ -23,7 +23,7 @@ const About = () => {
           View Selection &raquo;
         </Link>
       </div>
-      <div className="card-footer text-muted">2 days ago</div>
+      <div className="card-footer text-muted" />
     </div>
   )
 }
