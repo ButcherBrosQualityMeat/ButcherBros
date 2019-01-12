@@ -35,7 +35,7 @@ async function seed() {
     Product.create({
       name: 'Beef Shank',
       categoryId: 1,
-      price: '12.00',
+      price: 1200,
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
       description: 'The beef shank is the shank portion of a steer or heifer.'
@@ -43,7 +43,7 @@ async function seed() {
     Product.create({
       name: 'Brisket',
       categoryId: 1,
-      price: '20.00',
+      price: 2000,
       imageUrl:
         'https://assets.bonappetit.com/photos/5a05d8252fff8c4e1363fe4f/16:9/w_1200,c_limit/mamalehs-brisket.jpg',
       description:
@@ -52,7 +52,7 @@ async function seed() {
     Product.create({
       name: 'Pork Loin',
       categoryId: 2,
-      price: '6.00',
+      price: 600,
       imageUrl:
         'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/201307-xl-spice-roasted-pork-tenderloin.jpg?itok=VoUYF6Eq',
       description: 'Pork loin is a cut of meat from a pig.'
@@ -60,7 +60,7 @@ async function seed() {
     Product.create({
       name: 'Pork Belly',
       categoryId: 2,
-      price: '30.00',
+      price: 3000,
       imageUrl:
         'https://www.westcofoods.com/wp-content/uploads/2013/08/beef-shanks-2.jpg',
       description:
@@ -69,7 +69,7 @@ async function seed() {
     Product.create({
       name: 'Whole Chicken',
       categoryId: 3,
-      price: '2.00',
+      price: 200,
       imageUrl: 'http://www.kochfoodsinc.com/images/WOG_DescriptionImage.jpg',
       description:
         'Whole Chicken: The chicken with all parts intact, generally including the giblets.'
@@ -77,7 +77,7 @@ async function seed() {
     Product.create({
       name: 'Chicken wing ',
       categoryId: 3,
-      price: '112.00',
+      price: 11200,
       imageUrl:
         'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4c41b09cf41644a7b7ca1780edbeb960/BFV8354_Honey_BBQ_Chicken_Wings-FB1080.jpg',
       description:
