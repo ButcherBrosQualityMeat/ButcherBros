@@ -22,19 +22,23 @@ const CartPresentational = props => {
             </tr>
             {contents.map(item => {
               const product = products.find(e => e.id === item.productId)
-              totalPrice += parseInt(product.price * item.quantity, 10)
+              totalPrice += parseInt(product.price * item.quantity, 10) / 100
               return (
                 <tr key={product.id}>
                   <td>{item.quantity}</td>
                   <td>{product.name}</td>
-                  <td>{product.price * item.quantity}</td>
+                  <td>${product.price * item.quantity / 100}</td>
                 </tr>
               )
             })}
             <tr>
               <td />
-              <td>Total</td>
-              <td>{totalPrice}</td>
+              <td>
+                <b>Total</b>
+              </td>
+              <td>
+                <b>${totalPrice}</b>
+              </td>
             </tr>
           </tbody>
         </table>

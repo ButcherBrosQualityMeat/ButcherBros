@@ -40,7 +40,7 @@ export class AllProducts extends React.Component {
                   </Link>
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">${product.price}</p>
+                    <p className="card-text">${product.price / 100}</p>
                     <a
                       id={product.id}
                       onClick={this.handleClick}
