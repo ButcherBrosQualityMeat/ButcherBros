@@ -66,6 +66,7 @@ class SingleCategory extends React.Component {
                                 Add to Cart
                               </a>
                             </div>
+
                           </div>
                         </div>
                       )
