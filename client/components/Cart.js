@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class CartPresentational extends React.Component {
   render() {
@@ -55,4 +56,13 @@ class CartPresentational extends React.Component {
   }
 }
 
-export default withRouter(CartPresentational)
+const mapState = state => {
+  return {
+    cart: state.cart,
+    products: state.product.allProducts
+  }
+}
+
+const CartContainer = connect(mapState, null)(CartPresentational)
+
+export default withRouter(CartContainer)
