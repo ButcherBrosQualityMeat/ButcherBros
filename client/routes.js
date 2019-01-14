@@ -11,7 +11,6 @@ import {
   AllProducts,
   SingleCategory,
   Cart,
-  Checkout,
   CheckoutForm,
   OrderView
 } from './components'
@@ -44,7 +43,6 @@ class Routes extends Component {
         <Route path="/products/:id" component={SinglePageView} />
         <Route path="/products" component={AllProducts} />
         <Route path="/categories/:id" component={SingleCategory} />
-        <Route path="/checkout" component={Checkout} />
         <Route path="/checkoutform" component={CheckoutForm} />
         <Route path="/order/:orderId" component={OrderView} />
 

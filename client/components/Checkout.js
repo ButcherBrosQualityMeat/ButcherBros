@@ -1,7 +1,6 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import {connect} from 'react-redux'
-import Axios from 'axios'
 import {processPayment} from '../../store/checkout'
 
 class TakeMoney extends React.Component {
@@ -10,19 +9,7 @@ class TakeMoney extends React.Component {
     this.onToken = this.onToken.bind(this)
   }
 
-  // onToken = token => {
-  //   console.log('onToken', token)
-  //   fetch('/api/stripe/charge', {
-  //     method: 'POST',
-  //     body: JSON.stringify(token)
-  //   }).then(response => {
-  //     response.json().then(data => {
-  //       alert(`We are in business, ${data.email}`)
-  //     })
-  //   })
-  // }
   onToken = token => {
-    console.log('onToken', token)
     // token.phone = '8052668426'
     token.card.address_country = 'USA'
     token.card.address_line1 = '123 Main St.'
