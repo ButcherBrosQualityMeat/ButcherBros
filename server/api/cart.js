@@ -4,7 +4,7 @@ module.exports = router
 // GET
 // attempt to fetch preexisting cart
 router.get('/', (req, res, next) => {
-  if (!req.session.cart.contents) {
+  if (!req.session.cart) {
     req.session.cart = {contents: [], orderId: null}
   }
   res.json(req.session.cart)
