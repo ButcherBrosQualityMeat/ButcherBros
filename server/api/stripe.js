@@ -3,25 +3,8 @@ module.exports = router
 
 const keySecret = process.env.sk_test_Slu9Ke92GB9KPYhlsZIwySgU
 //determine if keySectret should euqal key alone or include process.env.
+
 const stripe = require('stripe')('sk_test_Slu9Ke92GB9KPYhlsZIwySgU')
-
-router.get('/', async (req, res, next) => {
-  try {
-    await res.render('index.pug', {
-      keySecret
-    })
-  } catch (err) {
-    next(err)
-  }
-})
-
-router.get('/paysuccess', async (req, res, next) => {
-  try {
-    await res.render('paysuccess', {})
-  } catch (err) {
-    next(err)
-  }
-})
 
 router.post('/charge', (req, res) => {
   let amount = 500
