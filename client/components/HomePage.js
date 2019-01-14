@@ -23,9 +23,11 @@ const HomePage = props => {
       </header>
 
       <div className="container">
-        <h2 id="qualityText" className="mt-3 text-center">
-          Quality You Can Taste
-        </h2>
+        <div className="mt-20 position-relative">
+          <h2 id="qualityText" className="mt-3 text-center">
+            Quality You Can Taste
+          </h2>
+        </div>
         <div className="row">
           <div className="mt-3 col-sm-4 my-4">
             <div className="card">
@@ -82,11 +84,11 @@ const HomePage = props => {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container d-flex justify-content-center">
           <div className="text-center col-sm-4">
             <h2 className="mt-4">Contact Us</h2>
             <address>
-              <strong>Start Bootstrap</strong>
+              <strong>Butcher Bros</strong>
               <br />3481 Melrose Place
               <br />Beverly Hills, CA 90210
               <br />
