@@ -6,7 +6,19 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <div>
+        <h2>Review Your Cart</h2>
         <Cart />
+        <form>
+          <label htmlFor="firstName">First Name</label>
+          <input type="text" name="firstName" size="50" required />
+          <label htmlFor="lastName">Last Name</label>
+          <input type="text" name="lastName" size="50" required />
+          <label htmlFor="address">Address</label>
+          <input type="text" name="address" size="50" required />
+          <label htmlFor="email">Email</label>
+          <input type="text" name="email" size="50" required />
+          <button type="submit">Submit Order</button>
+        </form>
       </div>
     )
   }
