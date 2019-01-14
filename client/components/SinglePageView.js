@@ -29,6 +29,7 @@ class SinglePageView extends React.Component {
             />
             <div className="card-body">
               <h5 className="card-title">{products[productIdNum].name}</h5>
+              <p className="card-text">${products[productIdNum].price / 100}</p>
               <p className="card-text">{products[productIdNum].description}</p>
               <a
                 href="#"
