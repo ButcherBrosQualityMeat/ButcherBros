@@ -84,11 +84,11 @@ const HomePage = props => {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container d-flex justify-content-center">
           <div className="text-center col-sm-4">
             <h2 className="mt-4">Contact Us</h2>
             <address>
-              <strong>Start Bootstrap</strong>
+              <strong>Butcher Bros</strong>
               <br />3481 Melrose Place
               <br />Beverly Hills, CA 90210
               <br />
