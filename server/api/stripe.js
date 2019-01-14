@@ -24,7 +24,6 @@ router.get('/paysuccess', async (req, res, next) => {
 })
 
 router.post('/charge', (req, res) => {
-  console.log('BUT MYYYYYY BODDDDYYY', req.body)
   let amount = 500
 
   stripe.customers
