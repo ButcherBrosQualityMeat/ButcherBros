@@ -13,4 +13,6 @@ export {default as Cart} from './Cart'
 export {default as AllProducts} from './AllProducts'
 export {default as SingleCategory} from './SingleCategory'
 export {default as CheckoutForm} from './CheckoutForm'
+export {default as OrderView} from './OrderView'
 export {Login, Signup} from './AuthForm'
+
