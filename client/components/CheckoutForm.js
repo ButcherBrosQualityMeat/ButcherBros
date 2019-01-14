@@ -6,7 +6,7 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <div>
-        <h2>Review Your Cart</h2>
+        <h3>Review Your Cart</h3>
         <Cart />
         <form>
           <label htmlFor="firstName">First Name</label>
