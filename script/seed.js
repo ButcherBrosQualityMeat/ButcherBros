@@ -106,7 +106,7 @@ async function seed() {
       categoryId: 1,
       price: 14399,
       imageUrl:
-        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF2-1-1024x773.jpg',
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF4-1-1024x773.jpg',
       description: 'A great cut for the broiler.'
     }),
     Product.create({

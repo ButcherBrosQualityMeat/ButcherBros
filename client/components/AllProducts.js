@@ -31,8 +31,8 @@ export class AllProducts extends React.Component {
                 <div className="card" width="18rem">
                   <Link to={`/products/${product.id}`}>
                     <img
-                      width="100%"
-                      height="150vw"
+                      width="150vw"
+                      height="220vw"
                       src={product.imageUrl}
                       className="card-img-top"
                       alt="..."

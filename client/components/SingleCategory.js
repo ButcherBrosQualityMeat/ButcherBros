@@ -37,38 +37,41 @@ class SingleCategory extends React.Component {
                   <h3 className="mt-5">
                     View our selection of {category.name} products:
                   </h3>
-                  {category.products.map(product => {
-                    return (
-                      <div
-                        className="h-70 col-sm-4 col-md-4 d-flex my-3"
-                        key={product.id}
-                      >
-                        <div className="card" width="18rem">
-                          <Link to={`/products/${product.id}`}>
-                            <img
-                              width="100%"
-                              height="150vw"
-                              src={product.imageUrl}
-                              className="card-img-top"
-                              alt="..."
-                            />
-                          </Link>
-                          <div className="card-body">
-                            <h5 className="card-title">{product.name}</h5>
-                            <p className="card-text">${product.price / 100}</p>
-                            <a
-                              id={product.id}
-                              onClick={this.handleClick}
-                              href="#"
-                              className="btn btn-dark"
-                            >
-                              Add to Cart
-                            </a>
+                  <div className="mb-5 row d-flex justify-content-start">
+                    {category.products.map(product => {
+                      return (
+                        <div
+                          className="h-70 col-sm-4 col-md-4 d-flex my-3"
+                          key={product.id}
+                        >
+                          <div className="card" width="18rem">
+                            <Link to={`/products/${product.id}`}>
+                              <img
+                                width="150vw"
+                                height="220vw"
+                                src={product.imageUrl}
+                                className="card-img-top"
+                                alt="..."
+                              />
+                            </Link>
+                            <div className="card-body">
+                              <h5 className="card-title">{product.name}</h5>
+                              <p className="card-text">${product.price}</p>
+                              <a
+                                id={product.id}
+                                onClick={this.handleClick}
+                                href="#"
+                                className="btn btn-dark"
+                              >
+                                Add to Cart
+                              </a>
+                            </div>
+
                           </div>
                         </div>
-                      </div>
-                    )
-                  })}
+                      )
+                    })}
+                  </div>
                 </div>
               )
             }
