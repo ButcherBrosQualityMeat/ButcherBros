@@ -87,7 +87,7 @@ const Navbar = ({handleClick, isLoggedIn, cart}) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/" onClick={handleClick}>
+                <Link className="nav-link" to="/homepage" onClick={handleClick}>
                   Logout
                 </Link>
               </li>
