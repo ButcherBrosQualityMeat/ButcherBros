@@ -12,7 +12,8 @@ import {
   SingleCategory,
   Cart,
   Checkout,
-  CheckoutForm
+  CheckoutForm,
+  OrderView
 } from './components'
 import {me} from './store'
 import {fetchAllProducts, fetchAllCategories} from './store/product'
@@ -45,6 +46,7 @@ class Routes extends Component {
         <Route path="/categories/:id" component={SingleCategory} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/checkoutform" component={CheckoutForm} />
+        <Route path="/order/:orderId" component={OrderView} />
 
         {isLoggedIn && (
           <Switch>
