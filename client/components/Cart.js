@@ -30,6 +30,7 @@ class CartPresentational extends React.Component {
                   <tr key={product.id}>
                     <td>{item.quantity}</td>
                     <td>{product.name}</td>
+                    {/* OB/JL: (5.5).toFixed(2) => 5.50 */}
                     <td>${product.price * item.quantity / 100}</td>
                   </tr>
                 )

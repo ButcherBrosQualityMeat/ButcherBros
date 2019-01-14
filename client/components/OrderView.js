@@ -17,6 +17,7 @@ class OrderView extends React.Component {
       `/api/orders/${this.props.match.params.orderId}`
     )
     const order = response.data
+    // OB/JL: paul bunyon
     console.log(order)
     this.setState(prevState => ({
       ...prevState,

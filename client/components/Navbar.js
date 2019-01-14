@@ -9,6 +9,7 @@ const Navbar = ({handleClick, isLoggedIn, cart}) => {
     return Number(item.quantity)
   })
   let cartNum
+  // OB/JL: could make a cart total utility function
   if (newCart.length) {
     cartNum = newCart.reduce((acc, cv) => acc + cv)
   }
@@ -191,6 +192,16 @@ const mapState = state => {
   }
 }
 
+// OB/JL: can do a shorthand object notation for mapDispatchToProps when it is like this:
+/*
+const mapDispatch = dispatch => ({
+  someMethod: () => dispatch(someActionCreator())
+});
+Because that's so common react-redux allows you to do this:
+const mapDispatch = {
+  someMethod: someActionCreator
+};
+*/
 const mapDispatch = dispatch => {
   return {
     handleClick() {
@@ -204,6 +215,7 @@ export default connect(mapState, mapDispatch)(Navbar)
 /**
  * PROP TYPES
  */
+// OB/JL: this helps provide warning if a component is "misused", useful for heavily reused components
 Navbar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
