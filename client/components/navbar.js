@@ -21,7 +21,7 @@ const Navbar = ({handleClick, isLoggedIn, cart}) => {
         <div className="container">
           <a className="navbar-brand" href="/homepage">
             Butcher Bros
-            {'    '}
+            {'      '}
             <img
               height="40px"
               width="40px"
