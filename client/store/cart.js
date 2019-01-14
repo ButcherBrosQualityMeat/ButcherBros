@@ -1,6 +1,7 @@
 import axios from 'axios'
 import store from './index'
 
+// OB/JL: could have another `combineReducers`
 // Initial State
 const emptyCart = {
   contents: [],
@@ -27,9 +28,11 @@ const retrievedCart = cart => ({
 
 // Thunk Creators
 export const addItemToCart = item => {
+  // OB/JL: can have `getState` as an argument
   return async dispatch => {
     const action = addToCart(item)
     dispatch(action)
+    // OB/JL: could put this earlier instead (invert the order)
     await axios.put('/api/cart', store.getState().cart)
   }
 }

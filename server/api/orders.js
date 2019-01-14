@@ -16,6 +16,14 @@ router.get('/:orderId', async (req, res, next) => {
 // POST
 router.post('/', async (req, res, next) => {
   try {
+    // OB/JL: access control here
+    /*
+    if (req.body.userId !== req.user.id || req.body.userId !== null) {
+      res.status(401).end();
+    } else {
+      // ...
+    }
+    */
     const order = await Order.create(req.body)
     res.status(201).json(order)
   } catch (error) {

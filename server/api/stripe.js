@@ -1,6 +1,7 @@
 const router = require('express').Router()
 module.exports = router
 
+// OB/JL: probably should be private!
 const keySecret = process.env.sk_test_Slu9Ke92GB9KPYhlsZIwySgU
 //determine if keySectret should euqal key alone or include process.env.
 
@@ -8,7 +9,8 @@ const stripe = require('stripe')('sk_test_Slu9Ke92GB9KPYhlsZIwySgU')
 
 router.post('/charge', (req, res) => {
   let amount = 500
-
+  // OB/JL: can `await` instead of `.then`
+  // OB/JL: writing lots of code in route handler, think about refactoring, maybe making a utility function
   stripe.customers
     .create({
       email: req.body.email,

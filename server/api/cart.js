@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 // create/update preexisting cart on session
 router.put('/', (req, res, next) => {
   req.session.cart = req.body
-  res.sendStatus(202)
+  res.sendStatus(202) // OB/JL: maybe 204
 })
 
 router.use((req, res, next) => {

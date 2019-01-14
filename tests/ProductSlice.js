@@ -34,6 +34,7 @@ describe('Product Slice', () => {
 
         try {
           await product.validate()
+          // OB/JL: recommend looking into chai-as-promised, which allows expect(whatever/*a promise */).to.eventually.reject()
           throw Error(
             'validation was successful but should have failed without `name`'
           )
@@ -79,6 +80,7 @@ describe('Product Slice', () => {
 
     beforeEach(async () => {
       const createdProducts = await Product.bulkCreate(productData)
+      // OB/JL: don't need to do `.dataValues`. you don't need this variable
       storedProducts = createdProducts.map(product => product.dataValues)
     })
 
@@ -131,6 +133,7 @@ describe('Product Slice', () => {
 
       it('returns a Plain Old JavaScript Object', () => {
         expect(typeof getAllProductsAction).to.equal('object')
+        // OB/JL: probably not necessary
         expect(Object.getPrototypeOf(getAllProductsAction)).to.equal(
           Object.prototype
         )
@@ -144,6 +147,7 @@ describe('Product Slice', () => {
 
     // defined in ../client/store/product.js
     describe('reducer', () => {
+      // OB/JL: code should probably happen in `before` or `beforeEach`
       const initialState = {
         allProducts: [],
         allCategories: []

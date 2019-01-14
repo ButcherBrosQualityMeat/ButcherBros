@@ -12,6 +12,7 @@ const payment = paid => {
 export const processPayment = credentials => {
   return async dispatch => {
     const response = await axios.post('/api/stripe/charge', credentials)
+    // OB/JL: dry dead log, burn it
     console.log(response.data)
     dispatch(payment(response.data.status))
   }
