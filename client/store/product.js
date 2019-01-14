@@ -47,10 +47,10 @@ export const fetchAllCategories = () => {
   }
 }
 
-//call fetchAllProducts where rendering, make a request to our server ('/api/products')
-//that request is going to return an object with a .data, which equals what you are requesting
-//then we're dsipatching getAllProducts with products as an arguement. Products contains the action.products payload
-//that we are adding to state
+//Call fetchAllProducts where rendering, make a request to our server ('/api/products')
+//That request is going to return an object with a .data, which equals what you are requesting
+//Then we're dsipatching getAllProducts with products as an arguement. Products contains the action.products payload
+//That we are adding to state
 
 /**
  * REDUCER
