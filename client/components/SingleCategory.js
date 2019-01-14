@@ -60,7 +60,7 @@ class SingleCategory extends React.Component {
                               id={product.id}
                               onClick={this.handleClick}
                               href="#"
-                              className="btn btn-primary"
+                              className="btn btn-dark"
                             >
                               Add to Cart
                             </a>
