@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import StripeCheckout from 'react-stripe-checkout'
+import {processPayment} from '../store/checkout'
 import {Cart} from './'
 
 class CheckoutForm extends React.Component {
@@ -12,6 +14,11 @@ class CheckoutForm extends React.Component {
       email: ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.onToken = this.onToken.bind(this)
+  }
+
+  onToken = token => {
+    this.props.processPayment(token)
   }
 
   handleChange(event) {
@@ -61,7 +68,10 @@ class CheckoutForm extends React.Component {
             onChange={this.handleChange}
             required
           />
-          <button type="submit">Submit Order</button>
+          <StripeCheckout
+            token={this.onToken}
+            stripeKey="pk_test_IKvGHmimQ1OH1sDz6RBtoaBE"
+          />
         </form>
       </div>
     )
@@ -69,6 +79,8 @@ class CheckoutForm extends React.Component {
 }
 
 const mapState = state => ({})
-const mapDispatch = dispatch => ({})
+const mapDispatch = dispatch => ({
+  processPayment: credentials => dispatch(processPayment(credentials))
+})
 
 export default connect(mapState, mapDispatch)(CheckoutForm)
