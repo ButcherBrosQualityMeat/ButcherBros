@@ -68,11 +68,11 @@ class CheckoutForm extends React.Component {
             onChange={this.handleChange}
             required
           />
-          <StripeCheckout
-            token={this.onToken}
-            stripeKey="pk_test_IKvGHmimQ1OH1sDz6RBtoaBE"
-          />
         </form>
+        <StripeCheckout
+          token={this.onToken}
+          stripeKey="pk_test_IKvGHmimQ1OH1sDz6RBtoaBE"
+        />
       </div>
     )
   }
