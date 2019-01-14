@@ -8,7 +8,16 @@ const Order = db.define('order', {
   contents: {
     type: Sequelize.ARRAY(Sequelize.JSON)
   },
+  firstName: {
+    type: Sequelize.STRING
+  },
+  lastName: {
+    type: Sequelize.STRING
+  },
   address: {
+    type: Sequelize.STRING
+  },
+  email: {
     type: Sequelize.STRING
   },
   // indicates whether order has been completed and paid for
