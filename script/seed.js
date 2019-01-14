@@ -82,6 +82,40 @@ async function seed() {
         'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4c41b09cf41644a7b7ca1780edbeb960/BFV8354_Honey_BBQ_Chicken_Wings-FB1080.jpg',
       description:
         'Chicken wing section (flat or drumette) that is generally deep-fried.'
+    }),
+
+    Product.create({
+      name: 'Prime Rib',
+      categoryId: 1,
+      price: 17300,
+      imageUrl:
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF3-1-1024x773.jpg',
+      description:
+        'Choice Boneless and Choice Bone-In. “Prime” is available by special order through the Butcher Shop and may require a deposit.'
+    }),
+    Product.create({
+      name: 'Brisket',
+      categoryId: 1,
+      price: 14399,
+      imageUrl:
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF1-1-1024x773.jpg',
+      description: 'Another great cut for the BBQ.'
+    }),
+    Product.create({
+      name: 'Top Sirloin',
+      categoryId: 1,
+      price: 14399,
+      imageUrl:
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF2-1-1024x773.jpg',
+      description: 'A great cut for the broiler.'
+    }),
+    Product.create({
+      name: 'Ribeye',
+      categoryId: 1,
+      price: 22300,
+      imageUrl:
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF2-1-1024x773.jpg',
+      description: 'A flavorful cut brimming with flavor. Boneless and Bone-In.'
     })
   ])
 
