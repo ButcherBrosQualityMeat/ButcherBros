@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
 import {processPayment} from '../store/checkout'
 import {Cart} from './'
+import history from '../history'
 
 class CheckoutForm extends React.Component {
   constructor() {
@@ -21,6 +22,10 @@ class CheckoutForm extends React.Component {
     this.props.processPayment(token)
   }
 
+  onClose = () => {
+    history.push('/homepage')
+  }
+
   handleChange(event) {
     const name = event.target.name
     const value = event.target.value
@@ -35,43 +40,17 @@ class CheckoutForm extends React.Component {
       <div>
         <h3>Review Your Cart</h3>
         <Cart />
-        <form>
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            size="50"
-            onChange={this.handleChange}
-            required
-          />
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            size="50"
-            onChange={this.handleChange}
-            required
-          />
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            name="address"
-            size="50"
-            onChange={this.handleChange}
-            required
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            size="50"
-            onChange={this.handleChange}
-            required
-          />
-        </form>
         <StripeCheckout
+          description="Quality You Can Taste..."
+          shippingAddress
+          amount={2000}
+          billingAddress
+          name="Butcher Bros"
+          image="https://images.vexels.com/media/users/3/143248/isolated/preview/9a073ffe6b6bd3508dd0f6e4da820c9a-steak-stroke-icon-by-vexels.png"
           token={this.onToken}
           stripeKey="pk_test_IKvGHmimQ1OH1sDz6RBtoaBE"
+          closed={this.onClose}
+          label="Pay with 💳"
         />
       </div>
     )

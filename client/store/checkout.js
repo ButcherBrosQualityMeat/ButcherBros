@@ -12,7 +12,8 @@ const payment = paid => {
 export const processPayment = credentials => {
   return async dispatch => {
     const response = await axios.post('/api/stripe/charge', credentials)
-    dispatch(payment(response.data.paid))
+    console.log(response.data)
+    dispatch(payment(response.data.status))
   }
 }
 
