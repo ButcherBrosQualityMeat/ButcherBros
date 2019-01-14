@@ -13,3 +13,4 @@ const footer = () => (
 )
 
 export default footer
+// testing to edit file to resolve merge conflict
