@@ -21,7 +21,7 @@ export class AllProducts extends React.Component {
     return (
       <div className="container-fluid col-sm-4 col-md-9">
         <h3 className="mt-5">All Products</h3>
-        <div className="row d-flex justify-content-start">
+        <div className="mb-5 row d-flex justify-content-start">
           {this.props.info.allProducts.map(product => {
             return (
               <div
@@ -45,7 +45,7 @@ export class AllProducts extends React.Component {
                       id={product.id}
                       onClick={this.handleClick}
                       href="#"
-                      className="btn btn-primary"
+                      className="btn btn-dark"
                     >
                       Add to Cart
                     </a>
