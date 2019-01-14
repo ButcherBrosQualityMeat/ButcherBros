@@ -23,9 +23,11 @@ const HomePage = props => {
       </header>
 
       <div className="container">
-        <h2 id="qualityText" className="mt-3 text-center">
-          Quality You Can Taste
-        </h2>
+        <div className="mt-20 position-relative">
+          <h2 id="qualityText" className="mt-3 text-center">
+            Quality You Can Taste
+          </h2>
+        </div>
         <div className="row">
           <div className="mt-3 col-sm-4 my-4">
             <div className="card">
