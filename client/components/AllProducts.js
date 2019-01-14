@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {addItemToCart, updateSessionCart} from '../store/cart'
+import {addItemToCart} from '../store/cart'
 
 export class AllProducts extends React.Component {
   constructor() {

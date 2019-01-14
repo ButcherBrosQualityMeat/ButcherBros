@@ -12,7 +12,6 @@ class SingleCategory extends React.Component {
   handleClick(evt) {
     evt.preventDefault()
     const productId = evt.target.id
-    console.log(productId)
     this.props.addItemToCart({productId: parseInt(productId, 10), quantity: 1})
   }
 

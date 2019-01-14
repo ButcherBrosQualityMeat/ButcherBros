@@ -1,10 +1,6 @@
 ## ButcherBros
 
-What We Do
-
-INSERT DESCRIPTION
-
-We are a full-service, third-generation family owned and operated butcher shop in Sparks, Nevada. We offer quality products at competitive pricing. Fresh cuts of USDA Choice quality beef, marinated tri-tip, stuffed pork chops, country bacon, fresh smoked ham, cream cheese-filled bacon-wrapped jalapeno poppers, korean short ribs and more. We have it all … choice quality, great selection and outstanding customer service! Oh, and one more thing: “If we don’t have it, we can get it!!” We have resources all over the U.S. that will help us find whatever it is you’re looking for!
+This is a RESTful appliction name for ButcherBros made so that customers can browse a list of products, add them to a cart, check out, and make a payment with a credit card using Stripe, either as guests or as logged-in users.
 
 ## Start
 
@@ -12,9 +8,13 @@ We are a full-service, third-generation family owned and operated butcher shop i
 
 If you want to run the server and/or webpack separately, you can also `npm run start-server` and `npm run build-client`.
 
-From there, just follow your bliss.
+From there, just follow your bliss. Load http://localhost:8080/homepage in your browser.
 
-## Deployment
+## About ButcherBros
+
+ButcherBros is a full-service, third-generation family owned and operated butcher shop in Sparks, Nevada. We offer quality products at competitive pricing. Fresh cuts of USDA Choice quality beef, marinated tri-tip, stuffed pork chops, country bacon, fresh smoked ham, cream cheese-filled bacon-wrapped jalapeno poppers, korean short ribs and more. We have it all … choice quality, great selection and outstanding customer service! Oh, and one more thing: “If we don’t have it, we can get it!!” We have resources all over the U.S. that will help us find whatever it is you’re looking for!
+
+## Deployment alternatives for future dev reference
 
 Ready to go world wide? Here's a guide to deployment! There are two (compatible) ways to deploy:
 
@@ -76,8 +76,3 @@ Some developers may prefer to control deployment rather than rely on automation.
 Now, you should be deployed!
 
 Why do all of these steps? The big reason is because we don't want our production server to be cluttered up with dev dependencies like webpack, but at the same time we don't want our development git-tracking to be cluttered with production build files like bundle.js! By doing these steps, we make sure our development and production environments both stay nice and clean!
-
-###Testing Out Creation of New Branch - HD
-This works
-
-Dalton has edited the Readme

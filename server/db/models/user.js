@@ -1,6 +1,6 @@
 const crypto = require('crypto')
 const Sequelize = require('sequelize')
-const {STRING, TEXT, INTEGER} = require('sequelize')
+const {STRING, TEXT} = require('sequelize')
 const db = require('../db')
 
 const User = db.define('user', {

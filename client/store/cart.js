@@ -34,7 +34,7 @@ export const addItemToCart = item => {
   }
 }
 
-// initial fetch of cart from server (if it exists)
+// Initial fetch of cart from server (if it exists)
 // followed by storing retrieved cart in redux store
 export const fetchCart = () => {
   return async dispatch => {
@@ -50,6 +50,7 @@ export const fetchCart = () => {
 // Each object has two properties: quantity and productId
 
 // Cart.orderId: if user is logged in, orderId of order stored in database
+/*eslint-disable*/
 export default function(cart = emptyCart, action) {
   switch (action.type) {
     case ADD_TO_CART:

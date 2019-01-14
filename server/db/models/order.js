@@ -2,9 +2,9 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Order = db.define('order', {
-  // list of products is an array of JSON objects.
+  // List of products is an array of JSON objects.
   // Each object has two properties: productId and quantity
-  // productId corresponds to ids in the product table
+  // ProductId corresponds to ids in the product table
   contents: {
     type: Sequelize.ARRAY(Sequelize.JSON)
   },
@@ -20,7 +20,7 @@ const Order = db.define('order', {
   email: {
     type: Sequelize.STRING
   },
-  // indicates whether order has been completed and paid for
+  // Indicates whether order has been completed and paid for
   orderIsComplete: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
