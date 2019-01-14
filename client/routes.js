@@ -11,7 +11,6 @@ import {
   AllProducts,
   SingleCategory,
   Cart,
-  Checkout,
   CheckoutForm
 } from './components'
 import {me} from './store'
@@ -43,7 +42,6 @@ class Routes extends Component {
         <Route path="/products/:id" component={SinglePageView} />
         <Route path="/products" component={AllProducts} />
         <Route path="/categories/:id" component={SingleCategory} />
-        <Route path="/checkout" component={Checkout} />
         <Route path="/checkoutform" component={CheckoutForm} />
 
         {isLoggedIn && (
