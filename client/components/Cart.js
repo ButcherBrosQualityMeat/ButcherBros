@@ -1,9 +1,14 @@
 import React from 'react'
-import {Link, withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {CartView} from './index'
+import {clearCart} from '../store/'
 
 class CartPresentational extends React.Component {
+  handleClear = async () => {
+    await this.props.clearCart()
+  }
+
   render() {
     const {cart, products} = this.props
     const contents = cart.contents
@@ -17,24 +22,29 @@ class CartPresentational extends React.Component {
           />
         </div>
         <div className="row">
-          {this.props.location.pathname === '/cart' && (
-            <Link to="/checkoutform">
-              <button type="button">Checkout</button>
-            </Link>
-          )}
+          <Link to="/checkoutform">
+            <button type="button">Checkout</button>
+          </Link>
+        </div>
+        <div className="row">
+          <button type="button" onClick={this.handleClear}>
+            Empty Cart
+          </button>
         </div>
       </div>
     )
   }
 }
 
-const mapState = state => {
-  return {
-    cart: state.cart,
-    products: state.product.allProducts
-  }
-}
+const mapState = state => ({
+  cart: state.cart,
+  products: state.product.allProducts
+})
 
-const CartContainer = connect(mapState, null)(CartPresentational)
+const mapDispatch = dispatch => ({
+  clearCart: () => dispatch(clearCart())
+})
 
-export default withRouter(CartContainer)
+const CartContainer = connect(mapState, mapDispatch)(CartPresentational)
+
+export default CartContainer

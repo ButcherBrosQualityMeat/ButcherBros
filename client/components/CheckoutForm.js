@@ -10,12 +10,6 @@ const publicStripeKey = require('../../secrets').publicStripeKey
 class CheckoutForm extends React.Component {
   constructor() {
     super()
-    this.state = {
-      firstName: '',
-      lastName: '',
-      address: '',
-      email: ''
-    }
     this.orderID = null
     this.handleChange = this.handleChange.bind(this)
     this.onToken = this.onToken.bind(this)

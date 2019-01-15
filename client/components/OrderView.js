@@ -3,6 +3,7 @@ import axios from 'axios'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {CartView} from './index'
+import {clearCart} from '../store/cart'
 
 class OrderView extends React.Component {
   constructor() {
@@ -22,6 +23,8 @@ class OrderView extends React.Component {
       ...prevState,
       order
     }))
+    // clear cart from server
+    await this.props.clearCart()
   }
 
   render() {
@@ -63,6 +66,10 @@ const mapState = state => {
   }
 }
 
-const OrderContainer = connect(mapState, null)(OrderView)
+const mapDispatch = dispatch => ({
+  clearCart: () => dispatch(clearCart())
+})
+
+const OrderContainer = connect(mapState, mapDispatch)(OrderView)
 
 export default withRouter(OrderContainer)
