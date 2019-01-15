@@ -4,6 +4,7 @@ import StripeCheckout from 'react-stripe-checkout'
 import {processPayment} from '../store/checkout'
 import {CartView} from './'
 import history from '../history'
+const publicStripeKey = require('../../secrets').publicStripeKey
 
 class CheckoutForm extends React.Component {
   constructor() {
@@ -53,7 +54,7 @@ class CheckoutForm extends React.Component {
           name="Butcher Bros"
           image="https://images.vexels.com/media/users/3/143248/isolated/preview/9a073ffe6b6bd3508dd0f6e4da820c9a-steak-stroke-icon-by-vexels.png"
           token={this.onToken}
-          stripeKey="pk_test_IKvGHmimQ1OH1sDz6RBtoaBE"
+          stripeKey={publicStripeKey}
           closed={this.onClose}
           label="Pay with 💳"
         />
