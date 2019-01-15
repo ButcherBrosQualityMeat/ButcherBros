@@ -12,7 +12,6 @@ class CartPresentational extends React.Component {
           <div className="row">Cart is Empty</div>
         </div>
       )
-    let totalPrice = 0
     return (
       <div className="container">
         <div className="row">
@@ -25,7 +24,6 @@ class CartPresentational extends React.Component {
               </tr>
               {contents.map(item => {
                 const product = products.find(e => e.id === item.productId)
-                totalPrice += parseInt(product.price * item.quantity, 10) / 100
                 return (
                   <tr key={product.id}>
                     <td>{item.quantity}</td>
@@ -40,7 +38,7 @@ class CartPresentational extends React.Component {
                   <b>Total</b>
                 </td>
                 <td>
-                  <b>${totalPrice}</b>
+                  <b>${cart.totalPrice / 100}</b>
                 </td>
               </tr>
             </tbody>
