@@ -36,7 +36,8 @@ class CheckoutForm extends React.Component {
       address,
       firstName,
       lastName,
-      totalPrice
+      totalPrice,
+      userId: this.props.userId || null
     }
     const response = await axios.post('/api/orders/', newOrderInfo)
     this.props.processPayment(token)
@@ -82,7 +83,8 @@ class CheckoutForm extends React.Component {
 const mapState = state => ({
   cart: state.cart,
   products: state.product.allProducts,
-  totalPrice: state.cart.totalPrice
+  totalPrice: state.cart.totalPrice,
+  userId: state.user.id
 })
 const mapDispatch = dispatch => ({
   processPayment: credentials => dispatch(processPayment(credentials))
