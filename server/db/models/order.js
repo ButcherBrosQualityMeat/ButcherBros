@@ -8,6 +8,9 @@ const Order = db.define('order', {
   contents: {
     type: Sequelize.ARRAY(Sequelize.JSON)
   },
+  totalPrice: {
+    type: Sequelize.INTEGER
+  },
   firstName: {
     type: Sequelize.STRING
   },

@@ -201,7 +201,8 @@ async function seed() {
       address: '1111 Meat Street, Meatville, CA',
       email: 'numberonemeatbro@meat.com',
       orderIsComplete: true,
-      contents: [{quantity: 1, productId: 1}, {quantity: 2, productId: 2}]
+      contents: [{quantity: 1, productId: 1}, {quantity: 2, productId: 2}],
+      totalPrice: 5200
     }),
     Order.create({
       firstName: 'Betty',
@@ -209,7 +210,8 @@ async function seed() {
       address: '123 Pork Loin Lane, Hamhock Town, NY',
       email: 'steakguuuurl@meat.com',
       orderIsComplete: true,
-      contents: [{quantity: 3, productId: 4}, {quantity: 2, productId: 3}]
+      contents: [{quantity: 3, productId: 4}, {quantity: 2, productId: 3}],
+      totalPrice: 10200
     })
   ])
 

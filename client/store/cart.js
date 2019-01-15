@@ -3,6 +3,7 @@ import axios from 'axios'
 // Initial State
 const emptyCart = {
   contents: [],
+  totalPrice: 0,
   orderId: null
 }
 

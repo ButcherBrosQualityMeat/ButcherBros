@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
 import {processPayment} from '../store/checkout'
-import {Cart} from './'
+import {CartView} from './'
 import history from '../history'
 
 class CheckoutForm extends React.Component {
@@ -36,10 +36,15 @@ class CheckoutForm extends React.Component {
   }
 
   render() {
+    const {cart, products} = this.props
     return (
       <div>
         <h3>Review Your Cart</h3>
-        <Cart />
+        <CartView
+          contents={cart.contents}
+          products={products}
+          totalPrice={cart.totalPrice}
+        />
         <StripeCheckout
           description="Quality You Can Taste..."
           shippingAddress
@@ -57,7 +62,10 @@ class CheckoutForm extends React.Component {
   }
 }
 
-const mapState = state => ({})
+const mapState = state => ({
+  cart: state.cart,
+  products: state.product.allProducts
+})
 const mapDispatch = dispatch => ({
   processPayment: credentials => dispatch(processPayment(credentials))
 })
