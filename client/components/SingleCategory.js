@@ -26,18 +26,35 @@ class SingleCategory extends React.Component {
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
               return (
-                <div
-                  className="container-fluid col-sm-4 col-md-9"
-                  key={category.id}
-                >
-                  <h3 className="mt-5"> {category.name}</h3>
-                  <img src={category.imageUrl} width="500px" heigth="500px" />
-                  <hr />
-                  <p>{category.description}</p>
-                  <h3 className="mt-5">
-                    View our selection of {category.name} products:
-                  </h3>
-                  <div className="mb-5 row d-flex justify-content-start">
+                <div>
+                  <header className="categories-header">
+                    <img src={category.imageUrl} width="100%" height="100%" />
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-lg-12">
+                          <h1
+                            id="hero-text"
+                            className="display-3 text-center text-white mt-4"
+                          >
+                            {category.name} <br />
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+                  </header>
+
+                  <div
+                    className="container-fluid col-sm-4 col-md-9"
+                    key={category.id}
+                  >
+                    <h3 className="mt-5"> {category.name}</h3>
+
+                    <hr />
+                    <p>{category.description}</p>
+                    <h3 className="mt-5">
+                      View our selection of {category.name} products:
+                    </h3>
+                    <div className="mb-5 row d-flex justify-content-start" />
                     {category.products.map(product => {
                       return (
                         <div

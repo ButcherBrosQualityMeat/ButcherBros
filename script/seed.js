@@ -11,7 +11,7 @@ async function seed() {
     Category.create({
       name: 'Beef',
       imageUrl:
-        'https://images.pexels.com/photos/1539684/pexels-photo-1539684.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/Beef-1024x453.jpg',
       carImg:
         'http://champoegcreamery.com/wp-content/uploads/2014/01/beef-cows-panorama.jpg',
       description:
@@ -20,8 +20,8 @@ async function seed() {
     Category.create({
       name: 'Pork',
       imageUrl:
-        'https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-      carImg:
+        'https://www.bigy.com/Media/Default/ButcherShop/butchershop.jpg',
+       carImg:
         'https://i.pinimg.com/originals/c2/10/f7/c210f7267fc83c0cc9ada955c93c2d47.jpg',
       description:
         'Pork is the culinary name for meat from a domestic pig. It is the most commonly consumed meat worldwide, with evidence of pig husbandry dating back to 5000 BC. Pork is eaten both freshly cooked and preserved.'
@@ -29,11 +29,19 @@ async function seed() {
     Category.create({
       name: 'Chicken',
       imageUrl:
-        'https://images.pexels.com/photos/265393/pexels-photo-265393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        'http://goodiesinthepantry.com/wp-content/uploads/2017/03/Chicken-Wings.jpg',
       carImg:
         'https://static1.squarespace.com/static/58c76b37414fb5205e1fbd21/t/5a59665808522942afe8347d/1515808356756/chicken+banner+%281%29.png?format=1500w',
       description:
         'The chicken is a type of domesticated fowl, a subspecies of the red junglefowl. It is one of the most common and widespread domestic animals, with a total population of more than 19 billion as of 2011.'
+    }),
+    Category.create({
+      name: 'Lamb',
+      imageUrl:
+        'https://www.thespruceeats.com/thmb/yWU6muyAV-Ga154H2Vz4ylTiEcQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/rosemary-garlic-lamb-shanks-recipe-101494-Ingredients-5bad052146e0fb002526455e.jpg',
+      carImg: 'https://i2.wp.com/www.ashleecraft.com/wp-content/uploads/2017/09/4-p-herbert2512-3.jpg',
+      description:
+        'There is little fat on lamb, and the meat can vary in color from a tender pink to a pale red. Spring lamb is extremely tender but has a milder flavor than lamb. Domestic lamb tends to be grain fed, contains more fat, and has a delicate flavor. Imported lamb, typically from Australia or New Zealand, tends to be grass fed, be leaner, and have a stronger flavor.'
     })
   ])
 
@@ -75,17 +83,26 @@ async function seed() {
     Product.create({
       name: 'Whole Chicken',
       categoryId: 3,
-      price: 200,
+      price: 2000,
       imageUrl: 'http://www.kochfoodsinc.com/images/WOG_DescriptionImage.jpg',
       description:
         'Whole Chicken: The chicken with all parts intact, generally including the giblets.'
+    }),
+    Product.create({
+      name: 'Organic Whole Chicken',
+      categoryId: 3,
+      price: 3000,
+      imageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Chickens_in_market.jpg/1920px-Chickens_in_market.jpg',
+      description:
+        'Organic grass fed free range chicken. Never administered antibiotics.'
     }),
     Product.create({
       name: 'Chicken wing ',
       categoryId: 3,
       price: 11200,
       imageUrl:
-        'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/4c41b09cf41644a7b7ca1780edbeb960/BFV8354_Honey_BBQ_Chicken_Wings-FB1080.jpg',
+        'https://tendercuts.in/media/catalog/product/cache/8/image/1800x/040ec09b1e35df139433887a97daa66f/f/r/fresh-range-chicken-pieces-thumbnail.jpg',
       description:
         'Chicken wing section (flat or drumette) that is generally deep-fried.'
     }),
@@ -122,6 +139,32 @@ async function seed() {
       imageUrl:
         'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/BEEF2-1-1024x773.jpg',
       description: 'A flavorful cut brimming with flavor. Boneless and Bone-In.'
+    }),
+
+    Product.create({
+      name: 'Lamb Roast',
+      categoryId: 4,
+      price: 37500,
+      imageUrl:
+        'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/lamb-1024x683.jpg',
+      description: 'Tender lamb roast.'
+    }),
+    Product.create({
+      name: 'Rack of Lamb',
+      categoryId: 4,
+      price: 13500,
+      imageUrl:
+        'https://www.dartagnan.com/dw/image/v2/AALC_PRD/on/demandware.static/-/Sites-dartagnan-live-catalog-en/default/dw8acf1452/images/products/FLAFR003-1.jpg?sw=490&strip=false',
+      description: "Call me mint jelly because I'm on the lamb"
+    }),
+    Product.create({
+      name: 'Lamb Shank',
+      categoryId: 4,
+      price: 21500,
+      imageUrl:
+        'http://freshnfrozen.com/wp-content/uploads/2017/09/LAmb-Shank-min.jpg',
+      description:
+        'The shank is the cut of lamb taken from the lower section of the animals legs and can be from the front legs or back legs.'
     })
   ])
 
