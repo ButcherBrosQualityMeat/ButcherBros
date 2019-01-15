@@ -7,12 +7,6 @@ class CartPresentational extends React.Component {
   render() {
     const {cart, products} = this.props
     const contents = cart.contents
-    if (contents.length === 0 || products.length === 0)
-      return (
-        <div className="container">
-          <div className="row">Cart is Empty</div>
-        </div>
-      )
     return (
       <div className="container">
         <div className="row">

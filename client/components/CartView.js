@@ -2,6 +2,12 @@ import React from 'react'
 
 const CartView = props => {
   const {products, contents, totalPrice} = props
+  if (contents.length === 0 || products.length === 0)
+    return (
+      <div className="container">
+        <div className="row">Cart is Empty</div>
+      </div>
+    )
   return (
     <table className="table">
       <tbody>
