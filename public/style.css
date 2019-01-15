@@ -100,4 +100,12 @@ body {
     width: 70%;
     height: 40%;
   }
+  .carousel {
+    height: 500px;
+    width: 80vw;
+  }
+  .carousel img {
+    height: 300px;
+    width: 80vw;
+  }
 }

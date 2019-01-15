@@ -12,6 +12,8 @@ async function seed() {
       name: 'Beef',
       imageUrl:
         'https://www.blueribbonbutchershop.com/wp-content/uploads/2016/06/Beef-1024x453.jpg',
+      carImg:
+        'http://champoegcreamery.com/wp-content/uploads/2014/01/beef-cows-panorama.jpg',
       description:
         'Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times. Beef is a source of high-quality protein and nutrients.'
     }),
@@ -19,6 +21,8 @@ async function seed() {
       name: 'Pork',
       imageUrl:
         'https://www.bigy.com/Media/Default/ButcherShop/butchershop.jpg',
+       carImg:
+        'https://i.pinimg.com/originals/c2/10/f7/c210f7267fc83c0cc9ada955c93c2d47.jpg',
       description:
         'Pork is the culinary name for meat from a domestic pig. It is the most commonly consumed meat worldwide, with evidence of pig husbandry dating back to 5000 BC. Pork is eaten both freshly cooked and preserved.'
     }),
@@ -26,6 +30,8 @@ async function seed() {
       name: 'Chicken',
       imageUrl:
         'http://goodiesinthepantry.com/wp-content/uploads/2017/03/Chicken-Wings.jpg',
+      carImg:
+        'https://static1.squarespace.com/static/58c76b37414fb5205e1fbd21/t/5a59665808522942afe8347d/1515808356756/chicken+banner+%281%29.png?format=1500w',
       description:
         'The chicken is a type of domesticated fowl, a subspecies of the red junglefowl. It is one of the most common and widespread domestic animals, with a total population of more than 19 billion as of 2011.'
     }),
@@ -33,6 +39,7 @@ async function seed() {
       name: 'Lamb',
       imageUrl:
         'https://www.thespruceeats.com/thmb/yWU6muyAV-Ga154H2Vz4ylTiEcQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/rosemary-garlic-lamb-shanks-recipe-101494-Ingredients-5bad052146e0fb002526455e.jpg',
+      carImg: 'https://i2.wp.com/www.ashleecraft.com/wp-content/uploads/2017/09/4-p-herbert2512-3.jpg',
       description:
         'There is little fat on lamb, and the meat can vary in color from a tender pink to a pale red. Spring lamb is extremely tender but has a milder flavor than lamb. Domestic lamb tends to be grain fed, contains more fat, and has a delicate flavor. Imported lamb, typically from Australia or New Zealand, tends to be grass fed, be leaner, and have a stronger flavor.'
     })
@@ -237,7 +244,8 @@ async function seed() {
       address: '1111 Meat Street, Meatville, CA',
       email: 'numberonemeatbro@meat.com',
       orderIsComplete: true,
-      contents: [{quantity: 1, productId: 1}, {quantity: 2, productId: 2}]
+      contents: [{quantity: 1, productId: 1}, {quantity: 2, productId: 2}],
+      totalPrice: 5200
     }),
     Order.create({
       firstName: 'Betty',
@@ -245,7 +253,8 @@ async function seed() {
       address: '123 Pork Loin Lane, Hamhock Town, NY',
       email: 'steakguuuurl@meat.com',
       orderIsComplete: true,
-      contents: [{quantity: 3, productId: 4}, {quantity: 2, productId: 3}]
+      contents: [{quantity: 3, productId: 4}, {quantity: 2, productId: 3}],
+      totalPrice: 10200
     })
   ])
 
