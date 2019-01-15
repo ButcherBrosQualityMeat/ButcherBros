@@ -11,10 +11,24 @@ router.get('/', (req, res, next) => {
 })
 
 // PUT
-// create/update preexisting cart on session
+// create/update preexisting cart on session with new item
 router.put('/', (req, res, next) => {
   req.session.cart = req.body
-  res.sendStatus(202)
+  res.sendStatus(204)
+})
+
+// create/update item in cart contents
+// req.body will be an object with quantity and productId
+router.put('/item', (req, res, next) => {
+  const item = req.session.cart.contents.find(
+    e => e.productId === req.body.productId
+  )
+  if (item) {
+    item.quantity += req.body.quantity
+  } else {
+    req.session.cart.contents.push(req.body)
+  }
+  res.json(req.session.cart)
 })
 
 router.use((req, res, next) => {
