@@ -26,7 +26,7 @@ class SingleCategory extends React.Component {
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
               return (
-                <div>
+                <div key={category.id}>
                   <header className="categories-header">
                     <img src={category.imageUrl} width="100%" height="100%" />
                     <div className="container">
