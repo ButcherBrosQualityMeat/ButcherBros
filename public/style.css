@@ -82,6 +82,14 @@ body {
   align-content: right;
 }
 
+#cat-name {
+  font-family: 'Knewave', cursive;
+}
+
+#product-point {
+  cursor: pointer !important;
+}
+
 /* Styles specific to desktop view go in here */
 @media (min-width: 992px) {
   body {

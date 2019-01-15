@@ -26,28 +26,20 @@ class SingleCategory extends React.Component {
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
               return (
-                <div key={category.id}>
-                  <header className="categories-header">
-                    <img src={category.imageUrl} width="100%" height="100%" />
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-lg-12">
-                          <h1
-                            id="hero-text"
-                            className="display-3 text-center text-white mt-4"
-                          >
-                            {category.name} <br />
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </header>
+                <div>
+                  <div key={category.id}>
+                    <header className="categories-header">
+                      <img src={category.imageUrl} width="100%" height="100%" />
+                    </header>
+                  </div>
 
                   <div
                     className="container-fluid col-sm-4 col-md-9"
                     key={category.id}
                   >
-                    <h3 className="mt-5"> {category.name}</h3>
+                    <h2 className="mt-5" id="cat-name">
+                      {category.name}
+                    </h2>
 
                     <hr />
                     <p>{category.description}</p>

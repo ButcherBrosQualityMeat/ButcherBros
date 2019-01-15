@@ -52,7 +52,7 @@ const Navbar = ({handleClick, isLoggedIn, cart, categories}) => {
                   About
                 </Link>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown" id="product-point">
                 <a
                   id="pointer"
                   className="nav-link dropdown-toggle"
