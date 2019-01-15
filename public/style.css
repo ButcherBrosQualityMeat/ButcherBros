@@ -42,6 +42,17 @@ body {
   -o-background-size: cover;
 }
 
+.categories-header {
+  height: 60vh;
+  min-height: 300px;
+  width: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 .card {
   height: 100%;
 }
