@@ -37,6 +37,18 @@ export const fetchCart = () => {
   }
 }
 
+// Clear cart from serverside session then
+// Update local state of cart
+export const clearCart = () => {
+  console.log('clearing cart')
+  return async dispatch => {
+    const response = await axios.delete('/api/cart')
+    const cart = response.data
+    const action = retrievedCart(cart)
+    dispatch(action)
+  }
+}
+
 // Cart Reducer
 // Cart.contents: an array of objects representing items.
 // Each object has two properties: quantity and productId

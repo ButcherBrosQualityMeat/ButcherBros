@@ -42,6 +42,12 @@ router.put('/item', async (req, res, next) => {
   }
 })
 
+// clear contents of cart on session object
+router.delete('/', (req, res, next) => {
+  req.session.cart = {contents: [], orderId: null, totalPrice: 0}
+  res.json(req.session.cart)
+})
+
 router.use((req, res, next) => {
   const error = new Error('Not Found')
   error.status = 404
