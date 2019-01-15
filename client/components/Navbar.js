@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn, cart}) => {
+const Navbar = ({handleClick, isLoggedIn, cart, categories}) => {
   const newCart = cart.map(item => {
     return Number(item.quantity)
   })
@@ -70,15 +70,17 @@ const Navbar = ({handleClick, isLoggedIn, cart}) => {
                     All
                   </Link>
                   <div className="dropdown-divider" />
-                  <Link className="dropdown-item" to="/categories/1">
-                    Beef
-                  </Link>
-                  <Link className="dropdown-item" to="/categories/2">
-                    Pork
-                  </Link>
-                  <Link className="dropdown-item" to="/categories/3">
-                    Chicken
-                  </Link>
+                  {categories.map(category => {
+                    return (
+                      <Link
+                        className="dropdown-item"
+                        to={`/categories/${category.id}`}
+                        key={category.id}
+                      >
+                        {category.name}
+                      </Link>
+                    )
+                  })}
                 </div>
               </li>
               <li className="nav-item">
@@ -164,11 +166,6 @@ const Navbar = ({handleClick, isLoggedIn, cart}) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  Sign Up
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login
                 </Link>
@@ -187,7 +184,8 @@ const Navbar = ({handleClick, isLoggedIn, cart}) => {
 const mapState = state => {
   return {
     isLoggedIn: !!state.user.id,
-    cart: state.cart.contents
+    cart: state.cart.contents,
+    categories: state.product.allCategories
   }
 }
 
