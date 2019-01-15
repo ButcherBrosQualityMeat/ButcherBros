@@ -1,10 +1,11 @@
 const router = require('express').Router()
 module.exports = router
+const privateStripeKey = require('../../secrets.js').privateStripeKey
 
 const keySecret = process.env.sk_test_Slu9Ke92GB9KPYhlsZIwySgU
-//determine if keySectret should euqal key alone or include process.env.
+//determine if keySectret should equal key alone or include process.env.
 
-const stripe = require('stripe')('sk_test_Slu9Ke92GB9KPYhlsZIwySgU')
+const stripe = require('stripe')(privateStripeKey)
 
 router.post('/charge', (req, res) => {
   let amount = 500
