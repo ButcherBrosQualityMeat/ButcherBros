@@ -12,6 +12,8 @@ async function seed() {
       name: 'Beef',
       imageUrl:
         'https://images.pexels.com/photos/1539684/pexels-photo-1539684.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      carImg:
+        'http://champoegcreamery.com/wp-content/uploads/2014/01/beef-cows-panorama.jpg',
       description:
         'Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times. Beef is a source of high-quality protein and nutrients.'
     }),
@@ -19,6 +21,8 @@ async function seed() {
       name: 'Pork',
       imageUrl:
         'https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      carImg:
+        'https://i.pinimg.com/originals/c2/10/f7/c210f7267fc83c0cc9ada955c93c2d47.jpg',
       description:
         'Pork is the culinary name for meat from a domestic pig. It is the most commonly consumed meat worldwide, with evidence of pig husbandry dating back to 5000 BC. Pork is eaten both freshly cooked and preserved.'
     }),
@@ -26,6 +30,8 @@ async function seed() {
       name: 'Chicken',
       imageUrl:
         'https://images.pexels.com/photos/265393/pexels-photo-265393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      carImg:
+        'https://static1.squarespace.com/static/58c76b37414fb5205e1fbd21/t/5a59665808522942afe8347d/1515808356756/chicken+banner+%281%29.png?format=1500w',
       description:
         'The chicken is a type of domesticated fowl, a subspecies of the red junglefowl. It is one of the most common and widespread domestic animals, with a total population of more than 19 billion as of 2011.'
     })

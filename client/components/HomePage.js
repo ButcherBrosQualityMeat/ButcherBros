@@ -28,62 +28,73 @@ const HomePage = props => {
             Quality You Can Taste
           </h2>
         </div>
-        <div className="row">
-          <div className="mt-3 col-sm-4 my-4">
-            <div className="card">
-              <img
-                className="card-img-top"
-                src={categories[0].imageUrl}
-                alt=""
-              />
-              <div className="card-body">
-                <h4 className="card-title">Beef Products</h4>
-                <p className="card-text">{categories[0].description}</p>
-              </div>
-              <div className="card-footer">
-                <Link to="/categories/1" className="btn btn-dark">
-                  Beef Products
-                </Link>
-              </div>
-            </div>
+        <div
+          id="carouselExampleIndicators"
+          className="carousel slide"
+          data-ride="carousel"
+        >
+          <ol className="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              className="active"
+            />
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+          </ol>
+          <div className="carousel-inner">
+            {categories.map((category, idx) => {
+              if (idx === 1) {
+                return (
+                  <div className="carousel-item active" key={category.id}>
+                    <div className="card">
+                      <Link to={`/categories/${category.id}`}>
+                        <img className="card-img-top" src={category.carImg} />
+                      </Link>
+                      <div className="card-body">
+                        <h4 className="card-title">{category.name}</h4>
+                        <p className="card-text">{category.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                )
+              } else {
+                return (
+                  <div className="carousel-item" key={category.id}>
+                    <div className="card">
+                      <Link to={`/categories/${category.id}`}>
+                        <img className="card-img-top" src={category.carImg} />
+                      </Link>
+                      <div className="card-body">
+                        <h4 className="card-title">{category.name}</h4>
+                        <p className="card-text">{category.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+            })}
           </div>
-          <div className="mt-3 col-sm-4 my-4">
-            <div className="card">
-              <img
-                className="card-img-top"
-                src={categories[1].imageUrl}
-                alt=""
-              />
-              <div className="card-body">
-                <h4 className="card-title">Pork Products</h4>
-                <p className="card-text">{categories[1].description}</p>
-              </div>
-              <div className="card-footer">
-                <Link to="/categories/2" className="btn btn-dark">
-                  Pork Products
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="mt-3 col-sm-4 my-4">
-            <div className="card">
-              <img
-                className="card-img-top"
-                src={categories[2].imageUrl}
-                alt=""
-              />
-              <div className="card-body">
-                <h4 className="card-title">Poultry Products</h4>
-                <p className="card-text">{categories[2].description}</p>
-              </div>
-              <div className="card-footer">
-                <Link to="/categories/3" className="btn btn-dark">
-                  Poultry Products
-                </Link>
-              </div>
-            </div>
-          </div>
+          <a
+            className="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="sr-only">Previous</span>
+          </a>
+          <a
+            className="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="sr-only">Next</span>
+          </a>
         </div>
+
         <div className="container d-flex justify-content-center">
           <div className="text-center col-sm-4">
             <h2 className="mt-4">Contact Us</h2>
