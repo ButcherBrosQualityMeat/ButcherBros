@@ -26,11 +26,13 @@ class CartPresentational extends React.Component {
             <button type="button">Checkout</button>
           </Link>
         </div>
-        <div className="row">
-          <button type="button" onClick={this.handleClear}>
-            Empty Cart
-          </button>
-        </div>
+        {contents.length !== 0 && (
+          <div className="row">
+            <button type="button" onClick={this.handleClear}>
+              Empty Cart
+            </button>
+          </div>
+        )}
       </div>
     )
   }
