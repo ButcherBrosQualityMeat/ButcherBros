@@ -21,9 +21,16 @@ class CheckoutForm extends React.Component {
   }
 
   onToken = async token => {
+    console.log(token)
     const contents = this.props.cart.contents
     const email = token.email
-    const address = token.card.address_city
+    const address =
+      token.card.address_line1 +
+      token.card.address_city +
+      token.card.address_state +
+      token.card.address_zip +
+      token.card.country
+
     const name = token.card.name.split(' ')
     const firstName = name[0]
     const lastName = name[1]
