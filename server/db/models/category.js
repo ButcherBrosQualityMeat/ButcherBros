@@ -9,6 +9,9 @@ const Category = db.define('category', {
   imageUrl: {
     type: Sequelize.STRING
   },
+  carImg: {
+    type: Sequelize.STRING
+  },
   description: {
     type: Sequelize.TEXT,
     allowNull: false

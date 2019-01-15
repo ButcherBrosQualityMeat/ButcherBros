@@ -47,20 +47,28 @@ const HomePage = props => {
               if (idx === 1) {
                 return (
                   <div className="carousel-item active" key={category.id}>
-                    <img className="d-block w-100" src={category.imageUrl} />
-                    <div className="carousel-caption d-none d-md-block">
-                      <h3>{category.name}</h3>
-                      <p>{category.description}</p>
+                    <div className="card">
+                      <Link to={`/categories/${category.id}`}>
+                        <img className="card-img-top" src={category.carImg} />
+                      </Link>
+                      <div className="card-body">
+                        <h4 className="card-title">{category.name}</h4>
+                        <p className="card-text">{category.description}</p>
+                      </div>
                     </div>
                   </div>
                 )
               } else {
                 return (
                   <div className="carousel-item" key={category.id}>
-                    <img className="d-block w-100" src={category.imageUrl} />
-                    <div className="carousel-caption d-none d-md-block">
-                      <h3>{category.name}</h3>
-                      <p>{category.description}</p>
+                    <div className="card">
+                      <Link to={`/categories/${category.id}`}>
+                        <img className="card-img-top" src={category.carImg} />
+                      </Link>
+                      <div className="card-body">
+                        <h4 className="card-title">{category.name}</h4>
+                        <p className="card-text">{category.description}</p>
+                      </div>
                     </div>
                   </div>
                 )
