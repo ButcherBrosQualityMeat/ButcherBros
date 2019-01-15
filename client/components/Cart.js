@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {CartView} from './index'
 
 class CartPresentational extends React.Component {
   render() {
@@ -15,34 +16,13 @@ class CartPresentational extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <table className="table">
-            <tbody>
-              <tr>
-                <th scope="col">Quantity</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-              </tr>
-              {contents.map(item => {
-                const product = products.find(e => e.id === item.productId)
-                return (
-                  <tr key={product.id}>
-                    <td>{item.quantity}</td>
-                    <td>{product.name}</td>
-                    <td>${product.price * item.quantity / 100}</td>
-                  </tr>
-                )
-              })}
-              <tr>
-                <td />
-                <td>
-                  <b>Total</b>
-                </td>
-                <td>
-                  <b>${cart.totalPrice / 100}</b>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <CartView
+            contents={contents}
+            products={products}
+            totalPrice={cart.totalPrice}
+          />
+        </div>
+        <div className="row">
           {this.props.location.pathname === '/cart' && (
             <Link to="/checkoutform">
               <button type="button">Checkout</button>
