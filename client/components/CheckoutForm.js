@@ -56,25 +56,29 @@ class CheckoutForm extends React.Component {
   render() {
     const {cart, products} = this.props
     return (
-      <div>
-        <h3>Review Your Cart</h3>
+      <div className="container">
+        <h3 className="mt-4 mb-4">Review Your Cart</h3>
         <CartView
+          className="mt-4"
           contents={cart.contents}
           products={products}
           totalPrice={cart.totalPrice}
         />
-        <StripeCheckout
-          description="Quality You Can Taste..."
-          shippingAddress
-          amount={this.props.totalPrice}
-          billingAddress
-          name="Butcher Bros"
-          image="https://images.vexels.com/media/users/3/143248/isolated/preview/9a073ffe6b6bd3508dd0f6e4da820c9a-steak-stroke-icon-by-vexels.png"
-          token={this.onToken}
-          stripeKey={publicStripeKey}
-          closed={this.onClose}
-          label="Pay with 💳"
-        />
+        <div className="mb-3 d-flex justify-content-end row mr-3">
+          <StripeCheckout
+            className="btn btn-dark"
+            description="Quality You Can Taste..."
+            shippingAddress
+            amount={this.props.totalPrice}
+            billingAddress
+            name="Butcher Bros"
+            image="https://images.vexels.com/media/users/3/143248/isolated/preview/9a073ffe6b6bd3508dd0f6e4da820c9a-steak-stroke-icon-by-vexels.png"
+            token={this.onToken}
+            stripeKey={publicStripeKey}
+            closed={this.onClose}
+            label="Pay with 💳"
+          />
+        </div>
       </div>
     )
   }
