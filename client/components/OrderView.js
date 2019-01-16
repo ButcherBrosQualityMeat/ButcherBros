@@ -3,6 +3,7 @@ import axios from 'axios'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {CartView} from './index'
+import {clearCart} from '../store/cart'
 
 class OrderView extends React.Component {
   constructor() {
@@ -15,13 +16,20 @@ class OrderView extends React.Component {
   async componentDidMount() {
     // fetch order from server
     const response = await axios.get(
-      `/api/orders/${this.props.match.params.orderId}`
+      `/api/orders/${this.props.match.params.orderId}`,
+      {
+        params: {
+          userId: this.props.userId
+        }
+      }
     )
     const order = response.data
     this.setState(prevState => ({
       ...prevState,
       order
     }))
+    // clear cart from server
+    await this.props.clearCart()
   }
 
   render() {
@@ -59,10 +67,15 @@ class OrderView extends React.Component {
 
 const mapState = state => {
   return {
-    products: state.product.allProducts
+    products: state.product.allProducts,
+    userId: state.user.id
   }
 }
 
-const OrderContainer = connect(mapState, null)(OrderView)
+const mapDispatch = dispatch => ({
+  clearCart: () => dispatch(clearCart())
+})
+
+const OrderContainer = connect(mapState, mapDispatch)(OrderView)
 
 export default withRouter(OrderContainer)

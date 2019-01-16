@@ -10,21 +10,22 @@ const publicStripeKey = require('../../secrets').publicStripeKey
 class CheckoutForm extends React.Component {
   constructor() {
     super()
-    this.state = {
-      firstName: '',
-      lastName: '',
-      address: '',
-      email: ''
-    }
     this.orderID = null
     this.handleChange = this.handleChange.bind(this)
     this.onToken = this.onToken.bind(this)
   }
 
   onToken = async token => {
+    console.log(token)
     const contents = this.props.cart.contents
     const email = token.email
-    const address = token.card.address_city
+    const address =
+      token.card.address_line1 +
+      token.card.address_city +
+      token.card.address_state +
+      token.card.address_zip +
+      token.card.country
+
     const name = token.card.name.split(' ')
     const firstName = name[0]
     const lastName = name[1]
@@ -35,7 +36,8 @@ class CheckoutForm extends React.Component {
       address,
       firstName,
       lastName,
-      totalPrice
+      totalPrice,
+      userId: this.props.userId || null
     }
     const response = await axios.post('/api/orders/', newOrderInfo)
     this.props.processPayment(token)
@@ -81,7 +83,8 @@ class CheckoutForm extends React.Component {
 const mapState = state => ({
   cart: state.cart,
   products: state.product.allProducts,
-  totalPrice: state.cart.totalPrice
+  totalPrice: state.cart.totalPrice,
+  userId: state.user.id
 })
 const mapDispatch = dispatch => ({
   processPayment: credentials => dispatch(processPayment(credentials))
