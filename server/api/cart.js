@@ -6,7 +6,7 @@ module.exports = router
 // attempt to fetch preexisting cart
 router.get('/', (req, res, next) => {
   if (!req.session.cart) {
-    req.session.cart = {contents: [], orderId: null, totalPrice: 0}
+    req.session.cart = {contents: [], totalPrice: 0}
   }
   res.json(req.session.cart)
 })
@@ -44,7 +44,7 @@ router.put('/item', async (req, res, next) => {
 
 // clear contents of cart on session object
 router.delete('/', (req, res, next) => {
-  req.session.cart = {contents: [], orderId: null, totalPrice: 0}
+  req.session.cart = {contents: [], totalPrice: 0}
   res.json(req.session.cart)
 })
 

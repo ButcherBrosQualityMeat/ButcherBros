@@ -22,7 +22,8 @@
     "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" \"./client/**/*.spec.js\" \"./script/**/*.spec.js\" --require @babel/polyfill --require @babel/register",
-    "product-test": "mocha ./tests/setup.js ./tests/ProductSlice.js --recursive --watch --require @babel/polyfill --require @babel/register"
+    "product-test": "mocha ./tests/setup.js ./tests/ProductSlice.js --recursive --watch --require @babel/polyfill --require @babel/register",
+    "cartview-test": "mocha ./tests/setup.js ./tests/CartViewSlice.js --recursive --watch --require @babel/polyfill --require @babel/register"
   },
   "lint-staged": {
     "*.{js,jsx}": [
