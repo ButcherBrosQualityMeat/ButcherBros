@@ -4,6 +4,7 @@ const {Order} = require('../db/models')
 module.exports = router
 
 // GET
+// Retrieve single order by order id
 router.get('/:orderId', async (req, res, next) => {
   try {
     //if theres a User
@@ -22,6 +23,29 @@ router.get('/:orderId', async (req, res, next) => {
       } else {
         res.status(401).end()
       }
+    }
+  } catch (error) {
+    next(error)
+  }
+})
+
+// Get all orders completed by a single user
+router.get('/user/:userId', async (req, res, next) => {
+  try {
+    console.log('req.user.id: ', req.user.id)
+    if (req.user.id === +req.params.userId) {
+      console.log('getting orders')
+      const userOrders = await Order.findAll({
+        where: {
+          userId: req.params.userId
+        }
+      })
+      console.log(userOrders[0])
+      console.log('# of orders: ', userOrders.length)
+      res.json(userOrders)
+    } else {
+      console.log('got no orders')
+      res.json([])
     }
   } catch (error) {
     next(error)

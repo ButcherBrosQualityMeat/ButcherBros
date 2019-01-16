@@ -89,6 +89,11 @@ const Navbar = ({handleClick, isLoggedIn, cart, categories}) => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/orderhistory">
+                  Order History
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/homepage" onClick={handleClick}>
                   Logout
                 </Link>
