@@ -39,6 +39,11 @@ router.get('/:orderId', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const order = await Order.create(req.body)
+    if (!req.session.orders) {
+      req.session.orders = [order]
+    } else {
+      req.session.orders.push(order)
+    }
     res.status(201).json(order)
   } catch (error) {
     next(error)
