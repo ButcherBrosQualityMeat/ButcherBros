@@ -86,8 +86,8 @@ body {
   font-family: 'Knewave', cursive;
 }
 
-#product-point {
-  cursor: pointer !important;
+li > a {
+  cursor: pointer;
 }
 
 /* Styles specific to desktop view go in here */

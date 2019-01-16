@@ -52,12 +52,11 @@ const Navbar = ({handleClick, isLoggedIn, cart, categories}) => {
                   About
                 </Link>
               </li>
-              <li className="nav-item dropdown" id="product-point">
+              <li className="nav-item dropdown">
                 <a
                   id="pointer"
                   className="nav-link dropdown-toggle"
                   to="#"
-                  id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -136,7 +135,6 @@ const Navbar = ({handleClick, isLoggedIn, cart, categories}) => {
                   id="pointer"
                   className="nav-link dropdown-toggle"
                   to="#"
-                  id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -149,15 +147,17 @@ const Navbar = ({handleClick, isLoggedIn, cart, categories}) => {
                     All
                   </Link>
                   <div className="dropdown-divider" />
-                  <Link className="dropdown-item" to="/categories/1">
-                    Beef
-                  </Link>
-                  <Link className="dropdown-item" to="/categories/2">
-                    Pork
-                  </Link>
-                  <Link className="dropdown-item" to="/categories/3">
-                    Chicken
-                  </Link>
+                  {categories.map(category => {
+                    return (
+                      <Link
+                        className="dropdown-item"
+                        to={`/categories/${category.id}`}
+                        key={category.id}
+                      >
+                        {category.name}
+                      </Link>
+                    )
+                  })}
                 </div>
               </li>
               <li className="nav-item">
