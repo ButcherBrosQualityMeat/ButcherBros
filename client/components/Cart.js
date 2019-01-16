@@ -14,7 +14,9 @@ class CartPresentational extends React.Component {
     const contents = cart.contents
     return (
       <div className="mt-4 container">
-        <h3 className="mb-4">Cart</h3>
+        <h3 id="cat-name" className="mb-4">
+          Cart
+        </h3>
         <div className="mt-75 row">
           <CartView
             contents={contents}

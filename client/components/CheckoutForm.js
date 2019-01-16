@@ -57,7 +57,9 @@ class CheckoutForm extends React.Component {
     const {cart, products} = this.props
     return (
       <div className="container">
-        <h3 className="mt-4 mb-4">Review Your Cart</h3>
+        <h3 id="cat-name" className="mt-4 mb-4">
+          Review Your Cart
+        </h3>
         <CartView
           className="mt-4"
           contents={cart.contents}
