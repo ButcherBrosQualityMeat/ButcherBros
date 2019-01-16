@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addItemToCart} from '../store/cart'
 
-class SingleCategory extends React.Component {
+export class SingleCategory extends React.Component {
   constructor() {
     super()
     this.handleClick = this.handleClick.bind(this)
@@ -32,7 +32,6 @@ class SingleCategory extends React.Component {
                       <img src={category.imageUrl} width="100%" height="100%" />
                     </header>
                   </div>
-
                   <div
                     className="container-fluid col-sm-4 col-md-9"
                     key={category.id}

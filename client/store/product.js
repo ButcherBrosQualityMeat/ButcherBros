@@ -23,6 +23,7 @@ export const getAllProducts = products => {
 }
 
 const getAllCategories = categories => {
+  console.log(categories, '<-------------')
   return {
     type: GET_ALL_CATEGORIES,
     categories
