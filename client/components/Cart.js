@@ -21,11 +21,13 @@ class CartPresentational extends React.Component {
             totalPrice={cart.totalPrice}
           />
         </div>
-        <div className="row">
-          <Link to="/checkoutform">
-            <button type="button">Checkout</button>
-          </Link>
-        </div>
+        {contents.length !== 0 && (
+          <div className="row">
+            <Link to="/checkoutform">
+              <button type="button">Checkout</button>
+            </Link>
+          </div>
+        )}
         {contents.length !== 0 && (
           <div className="row">
             <button type="button" onClick={this.handleClear}>
