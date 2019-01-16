@@ -3,15 +3,14 @@ import axios from 'axios'
 // Initial State
 const emptyCart = {
   contents: [],
-  totalPrice: 0,
-  orderId: null
+  totalPrice: 0
 }
 
 // ACTION TYPES
 const RETRIEVED_CART = 'RETRIEVED_CART'
 
 // Action Creators
-const retrievedCart = cart => ({
+export const retrievedCart = cart => ({
   type: RETRIEVED_CART,
   cart
 })
@@ -40,7 +39,6 @@ export const fetchCart = () => {
 // Clear cart from serverside session then
 // Update local state of cart
 export const clearCart = () => {
-  console.log('clearing cart')
   return async dispatch => {
     const response = await axios.delete('/api/cart')
     const cart = response.data

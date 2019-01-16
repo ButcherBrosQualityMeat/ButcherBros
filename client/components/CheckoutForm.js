@@ -16,7 +16,6 @@ class CheckoutForm extends React.Component {
   }
 
   onToken = async token => {
-    console.log(token)
     const contents = this.props.cart.contents
     const email = token.email
     const address =

@@ -10,9 +10,12 @@ If you want to run the server and/or webpack separately, you can also `npm run s
 
 From there, just follow your bliss. Load http://localhost:8080/homepage in your browser.
 
-## About ButcherBros
+## Unit Tests
 
-ButcherBros is a full-service, third-generation family owned and operated butcher shop in Sparks, Nevada. We offer quality products at competitive pricing. Fresh cuts of USDA Choice quality beef, marinated tri-tip, stuffed pork chops, country bacon, fresh smoked ham, cream cheese-filled bacon-wrapped jalapeno poppers, korean short ribs and more. We have it all … choice quality, great selection and outstanding customer service! Oh, and one more thing: “If we don’t have it, we can get it!!” We have resources all over the U.S. that will help us find whatever it is you’re looking for!
+To run various tests:
+
+`npm run product-test`
+`npm run cartview-test`
 
 ## Deployment alternatives for future dev reference
 
