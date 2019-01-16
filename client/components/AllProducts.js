@@ -20,7 +20,9 @@ export class AllProducts extends React.Component {
     }
     return (
       <div className="container-fluid col-sm-4 col-md-9">
-        <h3 className="mt-5">All Products</h3>
+        <h2 id="cat-name" className="mt-5">
+          All Products
+        </h2>
         <div className="mb-5 row d-flex justify-content-start">
           {this.props.info.allProducts.map(product => {
             return (
