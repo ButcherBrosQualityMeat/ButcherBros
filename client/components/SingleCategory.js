@@ -26,16 +26,13 @@ export class SingleCategory extends React.Component {
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
               return (
-                <div>
-                  <div key={category.id}>
+                <div key={category.id}>
+                  <div>
                     <header className="categories-header">
                       <img src={category.imageUrl} width="100%" height="100%" />
                     </header>
                   </div>
-                  <div
-                    className="container-fluid col-sm-4 col-md-9"
-                    key={category.id}
-                  >
+                  <div className="container-fluid col-sm-4 col-md-9">
                     <h2 className="mt-5" id="cat-name">
                       {category.name}
                     </h2>
@@ -49,8 +46,8 @@ export class SingleCategory extends React.Component {
                     {category.products.map(product => {
                       return (
                         <div
-                          className="h-70 col-sm-4 col-md-4 d-flex my-3"
                           key={product.id}
+                          className="h-70 col-sm-4 col-md-4 d-flex my-3"
                         >
                           <div className="card" width="18rem">
                             <Link to={`/products/${product.id}`}>
