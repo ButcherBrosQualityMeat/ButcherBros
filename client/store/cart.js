@@ -10,7 +10,7 @@ const emptyCart = {
 const RETRIEVED_CART = 'RETRIEVED_CART'
 
 // Action Creators
-const retrievedCart = cart => ({
+export const retrievedCart = cart => ({
   type: RETRIEVED_CART,
   cart
 })

@@ -1,10 +1,10 @@
 'use strict'
 
 // Tests:
-// React - C Component
+// React - CartView Component
 // Sequelize - Order Model
 // Express - Order Route
-// React-Redux - Cart Reducer
+// React-Redux - Cart Action Creator
 
 // Assertions
 const chai = require('chai')
@@ -26,7 +26,7 @@ import React from 'react'
 import CartView from '../client/components/CartView'
 
 // Redux
-import reducer, {RETRIEVED_CART, fetchCart} from '../client/store/cart'
+import {retrievedCart} from '../client/store/cart'
 
 // Test Order model
 describe('Order model', () => {
@@ -39,6 +39,21 @@ describe('Order model', () => {
 })
 
 // Test Order Route
+describe('POST `/api/orders`', () => {
+  const testOrder = {
+    firstName: 'Joe',
+    lastName: 'MeatGuy',
+    address: '1111 Meat Street, Meatville, CA',
+    email: 'numberonemeatbro@meat.com',
+    orderIsComplete: true,
+    contents: [{quantity: 1, productId: 1}, {quantity: 2, productId: 2}],
+    totalPrice: 5200
+  }
+
+  it('returns the newly created order', async () => {
+    await agent.post('/api/orders', testOrder).expect(201)
+  })
+})
 
 // Test Cart View
 describe('Cart View Functional Component', () => {
@@ -57,13 +72,8 @@ describe('Cart View Functional Component', () => {
   })
 })
 
-// Test Cart Redux Store/Reducer
-describe('Cart Reducer', () => {
-  const initialState = {
-    contents: [],
-    totalPrice: 0
-  }
-
+// Test Cart Redux Store
+describe('Describe retrievedCart Action Creator', () => {
   const cartItemOne = {quantity: 1, productId: 1}
   const cartItemTwo = {quantity: 2, productId: 5}
 
@@ -72,13 +82,15 @@ describe('Cart Reducer', () => {
     totalPrice: 50
   }
 
-  const newState = reducer(initialState, {
-    type: RETRIEVED_CART,
-    cart: populatedCart
-  })
-  console.log('newState: ', newState)
+  const retrievedCartAction = retrievedCart(populatedCart)
 
-  it('returns a new state with updated cart', () => {
-    expect(newState).to.deep.equal(populatedCart)
+  it('returns a Plain Old JavaScript Object', () => {
+    expect(typeof retrievedCartAction).to.equal('object')
+    expect(Object.getPrototypeOf(retrievedCartAction)).to.equal(
+      Object.prototype
+    )
+  })
+  it('has a cart with a contents property', () => {
+    expect(retrievedCartAction.cart.contents.length).to.equal(2)
   })
 })
