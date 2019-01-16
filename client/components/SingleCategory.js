@@ -21,7 +21,7 @@ export class SingleCategory extends React.Component {
       return <div>Please standy, loading category...</div>
     }
     return (
-      <div>
+      <div className="container-fluid col-sm-4 col-md-9">
         <div>
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
@@ -32,16 +32,16 @@ export class SingleCategory extends React.Component {
                       <img src={category.imageUrl} width="100%" height="100%" />
                     </header>
                   </div>
-                  <div className="container-fluid col-sm-4 col-md-9">
+                  <h3 className="mt-5">
+                    View our selection of {category.name} products:
+                  </h3>
+                  <div className="mb-5 row d-flex justify-content-start">
                     <h2 className="mt-5" id="cat-name">
                       {category.name}
                     </h2>
 
                     <hr />
                     <p>{category.description}</p>
-                    <h3 className="mt-5">
-                      View our selection of {category.name} products:
-                    </h3>
                     <div className="mb-5 row d-flex justify-content-start" />
                     {category.products.map(product => {
                       return (
