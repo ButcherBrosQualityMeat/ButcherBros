@@ -9,23 +9,16 @@ router.get('/:orderId', async (req, res, next) => {
     //if theres a User
     if (req.user) {
       const userId = +req.query.userId
-      if (userId === +req.user.id) {
-        const order = await Order.findById(req.params.orderId)
+      const order = await Order.findById(req.params.orderId)
+      if (userId === +req.user.id && order.userId === userId) {
         res.json(order)
       } else {
         res.status(401).end()
       }
     } else {
-      // // if there is not a user
-      const orders = await Order.findAll({
-        limit: 1,
-        where: {
-          userId: null
-        },
-        order: [['createdAt', 'DESC']]
-      })
-      if (orders[0].id === +req.params.orderId) {
-        res.json(orders[0])
+      const order = req.session.orders.find(e => e.id === +req.params.orderId)
+      if (order) {
+        res.json(order)
       } else {
         res.status(401).end()
       }
