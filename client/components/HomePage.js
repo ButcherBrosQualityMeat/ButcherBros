@@ -6,7 +6,7 @@ const HomePage = props => {
   const {categories, products} = props
 
   return categories.length && products.length ? (
-    <div>
+    <div width="100%">
       <header className="business-header">
         <div className="container">
           <div className="row">
@@ -22,7 +22,7 @@ const HomePage = props => {
         </div>
       </header>
 
-      <div className="container">
+      <div width="100%" className="mt-4 p-0 container">
         <div className="mt-20 position-relative">
           <h2 id="qualityText" className="mt-3 text-center">
             Quality You Can Taste
@@ -30,7 +30,7 @@ const HomePage = props => {
         </div>
         <div
           id="carouselExampleIndicators"
-          className="carousel slide"
+          className="mt-4 ml-3 carousel slide"
           data-ride="carousel"
         >
           <ol className="carousel-indicators">
@@ -52,8 +52,12 @@ const HomePage = props => {
                         <img className="card-img-top" src={category.carImg} />
                       </Link>
                       <div className="card-body">
-                        <h4 className="card-title">{category.name}</h4>
-                        <p className="card-text">{category.description}</p>
+                        <h4 className="text-center card-title">
+                          {category.name}
+                        </h4>
+                        <p className="text-center card-text">
+                          {category.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -66,8 +70,12 @@ const HomePage = props => {
                         <img className="card-img-top" src={category.carImg} />
                       </Link>
                       <div className="card-body">
-                        <h4 className="card-title">{category.name}</h4>
-                        <p className="card-text">{category.description}</p>
+                        <h4 className="text-center card-title">
+                          {category.name}
+                        </h4>
+                        <p className="text-center card-text">
+                          {category.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -95,8 +103,8 @@ const HomePage = props => {
           </a>
         </div>
 
-        <div className="container d-flex justify-content-center">
-          <div className="text-center col-sm-4">
+        <div width="100%" className="container d-flex justify-content-center">
+          <div className="position- text-center col-sm-4">
             <h2 className="mt-4">Contact Us</h2>
             <address>
               <strong>Butcher Bros</strong>
