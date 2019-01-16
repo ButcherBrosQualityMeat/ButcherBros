@@ -32,7 +32,7 @@ class SinglePageView extends React.Component {
               <p className="card-text">{products[productIdNum].description}</p>
               <a
                 href="#"
-                className="btn btn-primary"
+                className="btn btn-dark"
                 id={products[productIdNum].id}
                 onClick={this.handleClick}
               >

@@ -13,28 +13,33 @@ class CartPresentational extends React.Component {
     const {cart, products} = this.props
     const contents = cart.contents
     return (
-      <div className="container">
-        <div className="row">
+      <div className="mt-4 container">
+        <h3 className="mb-4">Cart</h3>
+        <div className="mt-75 row">
           <CartView
             contents={contents}
             products={products}
             totalPrice={cart.totalPrice}
           />
         </div>
-        {contents.length !== 0 && (
-          <div className="row">
-            <Link to="/checkoutform">
-              <button type="button">Checkout</button>
-            </Link>
-          </div>
-        )}
-        {contents.length !== 0 && (
-          <div className="row">
-            <button type="button" onClick={this.handleClear}>
+        <div className="mb-3 d-flex justify-content-end row">
+          {contents.length !== 0 && (
+            <button
+              className="btn btn-danger"
+              type="button"
+              onClick={this.handleClear}
+            >
               Empty Cart
             </button>
-          </div>
-        )}
+          )}
+        </div>
+        <div className="mb-3 d-flex justify-content-end row">
+          <Link to="/checkoutform">
+            <button className="btn btn-dark" type="button">
+              Checkout
+            </button>
+          </Link>
+        </div>
       </div>
     )
   }

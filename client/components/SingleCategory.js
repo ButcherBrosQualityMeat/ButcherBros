@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addItemToCart} from '../store/cart'
 
-class SingleCategory extends React.Component {
+export class SingleCategory extends React.Component {
   constructor() {
     super()
     this.handleClick = this.handleClick.bind(this)
@@ -21,37 +21,33 @@ class SingleCategory extends React.Component {
       return <div>Please standy, loading category...</div>
     }
     return (
-      <div>
+      <div className="container-fluid col-sm-4 col-md-9">
         <div>
           {this.props.info.allCategories.map(category => {
             if (category.id === categoryId) {
               return (
-                <div>
-                  <div key={category.id}>
+                <div key={category.id}>
+                  <div>
                     <header className="categories-header">
                       <img src={category.imageUrl} width="100%" height="100%" />
                     </header>
                   </div>
-
-                  <div
-                    className="container-fluid col-sm-4 col-md-9"
-                    key={category.id}
-                  >
+                  <h3 className="mt-5">
+                    View our selection of {category.name} products:
+                  </h3>
+                  <div className="mb-5 row d-flex justify-content-start">
                     <h2 className="mt-5" id="cat-name">
                       {category.name}
                     </h2>
 
                     <hr />
                     <p>{category.description}</p>
-                    <h3 className="mt-5">
-                      View our selection of {category.name} products:
-                    </h3>
                     <div className="mb-5 row d-flex justify-content-start" />
                     {category.products.map(product => {
                       return (
                         <div
-                          className="h-70 col-sm-4 col-md-4 d-flex my-3"
                           key={product.id}
+                          className="h-70 col-sm-4 col-md-4 d-flex my-3"
                         >
                           <div className="card" width="18rem">
                             <Link to={`/products/${product.id}`}>
