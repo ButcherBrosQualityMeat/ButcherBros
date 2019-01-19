@@ -26,7 +26,6 @@
     "cartview-test": "mocha ./tests/setup.js ./tests/CartViewSlice.js --recursive --watch --require @babel/polyfill --require @babel/register",
     "category-test": "mocha ./tests/setup.js ./tests/CategorySlice.js --recursive --watch --require @babel/polyfill --require @babel/register"
   },
-
   "lint-staged": {
     "*.{js,jsx}": [
       "prettier --write",

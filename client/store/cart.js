@@ -16,6 +16,9 @@ export const retrievedCart = cart => ({
 })
 
 // Thunk Creators
+
+// updates the cart on the server, then updates local cart
+// with cart fetched from server
 export const addItemToCart = item => {
   return async dispatch => {
     const response = await axios.put('/api/cart/item', item)

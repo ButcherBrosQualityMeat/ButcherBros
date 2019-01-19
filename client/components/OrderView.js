@@ -15,7 +15,7 @@ class OrderView extends React.Component {
   }
 
   async componentDidMount() {
-    // fetch order from server
+    // fetch single order from server
     try {
       const response = await axios.get(
         `/api/orders/${this.props.match.params.orderId}`,
