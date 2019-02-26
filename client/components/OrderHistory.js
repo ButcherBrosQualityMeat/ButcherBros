@@ -11,6 +11,8 @@ class OrderHistory extends React.Component {
       error: {}
     }
   }
+
+  // get all orders associated with this user if they are logged in
   async componentDidMount() {
     try {
       const response = await axios.get(`api/orders/user/${this.props.userId}`)
@@ -28,6 +30,7 @@ class OrderHistory extends React.Component {
   }
 
   render() {
+    // display error message if unauthorized access detected
     if (this.state.error.response) {
       return (
         <div>{`${this.state.error.reponse.status} - ${

@@ -48,6 +48,7 @@ router.get('/user/:userId', async (req, res, next) => {
 })
 
 // POST
+// attempt to create a new order
 router.post('/', async (req, res, next) => {
   try {
     const order = await Order.create(req.body)
